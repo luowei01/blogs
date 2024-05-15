@@ -1,0 +1,1294 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Understanding LightGCN in a visualized way · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-comments-footer/comment.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ranknet.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    机器学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../common/">
+            
+                <a href="../common/">
+            
+                    
+                    一般话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../common/regularization.html">
+            
+                <a href="../common/regularization.html">
+            
+                    
+                    再谈正则化项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../common/conv.html">
+            
+                <a href="../common/conv.html">
+            
+                    
+                    论文阅读：“快把卷积神经网络中的平移不变性带回来”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../common/semi-supervised-learning.html">
+            
+                <a href="../common/semi-supervised-learning.html">
+            
+                    
+                    半监督/无监督学习收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../common/collection.html">
+            
+                <a href="../common/collection.html">
+            
+                    
+                    收藏夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    推荐系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.2.1" data-path="light_gcn.html">
+            
+                <a href="light_gcn.html">
+            
+                    
+                    Understanding LightGCN in a visualized way
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="ranknet.html">
+            
+                <a href="ranknet.html">
+            
+                    
+                    Learning To Rank 之 RankNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="bpr_and_hinger.html">
+            
+                <a href="bpr_and_hinger.html">
+            
+                    
+                    随想： BPR Loss 与 Hinger Loss
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="ab_testing.html">
+            
+                <a href="ab_testing.html">
+            
+                    
+                    关于AA测试和AB测试的一些思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="non_sampling_mf.html">
+            
+                <a href="non_sampling_mf.html">
+            
+                    
+                    无采样的矩阵分解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="collection.html">
+            
+                <a href="collection.html">
+            
+                    
+                    收藏夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../rl/">
+            
+                <a href="../rl/">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../rl/mab-summary.html">
+            
+                <a href="../rl/mab-summary.html">
+            
+                    
+                    Re：从零开始的Multi-armed Bandit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../game201/">
+            
+                <a href="../../game201/">
+            
+                    
+                    高级物理引擎实战指南笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../game201/mass_spring.html">
+            
+                <a href="../../game201/mass_spring.html">
+            
+                    
+                    弹簧质点系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../game201/sph.html">
+            
+                <a href="../../game201/sph.html">
+            
+                    
+                    光滑粒子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../game201/linear_eq_solver.html">
+            
+                <a href="../../game201/linear_eq_solver.html">
+            
+                    
+                    专题：线性方程组求解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../FEM/">
+            
+                <a href="../../FEM/">
+            
+                    
+                    有限单元法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../FEM/01-preface.html">
+            
+                <a href="../../FEM/01-preface.html">
+            
+                    
+                    1. 引论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../FEM/02-direct-stiffness-method.html">
+            
+                <a href="../../FEM/02-direct-stiffness-method.html">
+            
+                    
+                    2. 基于直接刚度法的杆系有限元方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../FEM/03-complex-deformable-body-1.html">
+            
+                <a href="../../FEM/03-complex-deformable-body-1.html">
+            
+                    
+                    3. 针对复杂几何形状变形体的力学描述（1）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Web开发相关技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../web/jwt.html">
+            
+                <a href="../../web/jwt.html">
+            
+                    
+                    JWT简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../other-tech/">
+            
+                <a href="../../other-tech/">
+            
+                    
+                    技术杂文
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../other-tech/https.html">
+            
+                <a href="../../other-tech/https.html">
+            
+                    
+                    Let's encrypt -- 让我们一起愉快的使用HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../other-tech/fuck-thunder.html">
+            
+                <a href="../../other-tech/fuck-thunder.html">
+            
+                    
+                    干掉吸血雷，重塑和谐P2P环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../other-tech/can-panel.html">
+            
+                <a href="../../other-tech/can-panel.html">
+            
+                    
+                    开源CAN总线信号可编程台架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../other-tech/mdadm.html">
+            
+                <a href="../../other-tech/mdadm.html">
+            
+                    
+                    Linux下利用mdadm设置软件 RAID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../other-tech/net-self-sufficient.html">
+            
+                <a href="../../other-tech/net-self-sufficient.html">
+            
+                    
+                    互不联网时代的自给自足
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../other-tech/cloud-or-not.html">
+            
+                <a href="../../other-tech/cloud-or-not.html">
+            
+                    
+                    为什么我劝你不要使用云计算？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../other-tech/innet.html">
+            
+                <a href="../../other-tech/innet.html">
+            
+                    
+                    科学的公司内网连接技术选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../other-tech/nas.html">
+            
+                <a href="../../other-tech/nas.html">
+            
+                    
+                    构建家用NAS过程中的碎碎念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../other-tech/move2linux.html">
+            
+                <a href="../../other-tech/move2linux.html">
+            
+                    
+                    简易的Linux迁移指北
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../other-tech/rsync-caused-problem.html">
+            
+                <a href="../../other-tech/rsync-caused-problem.html">
+            
+                    
+                    记录一次rsync命令引起的异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../other-tech/ffmpeg_qsv.html">
+            
+                <a href="../../other-tech/ffmpeg_qsv.html">
+            
+                    
+                    为FFMPEG添加Intel QSV支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../other-tech/note.html">
+            
+                <a href="../../other-tech/note.html">
+            
+                    
+                    备忘录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../other-tech/fukuoka-gaimenkirikae.html">
+            
+                <a href="../../other-tech/fukuoka-gaimenkirikae.html">
+            
+                    
+                    福冈外免切替（中国驾照换日本驾照）攻略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../../other-tech/mysql-optimizer-in-clause.html">
+            
+                <a href="../../other-tech/mysql-optimizer-in-clause.html">
+            
+                    
+                    记一个离谱的MySQL语句的性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../../other-tech/save-my-openwrt.html">
+            
+                <a href="../../other-tech/save-my-openwrt.html">
+            
+                    
+                    拯救变砖的OpenWRT路由器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../../other-tech/frp.html">
+            
+                <a href="../../other-tech/frp.html">
+            
+                    
+                    使用FRP进行内网穿透
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../spam/">
+            
+                <a href="../../spam/">
+            
+                    
+                    政治不正确
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../spam/shit-cap2employee/">
+            
+                <a href="../../spam/shit-cap2employee/">
+            
+                    
+                    吃屎系列：资本家如何喂员工吃屎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../../spam/shit-cap2employee/huawei-251.html">
+            
+                <a href="../../spam/shit-cap2employee/huawei-251.html">
+            
+                    
+                    华为251事件记忆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../spam/shit-cap2user/">
+            
+                <a href="../../spam/shit-cap2user/">
+            
+                    
+                    吃屎系列：资本家如何喂用户吃屎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../../spam/shit-cap2user/rape-user.html">
+            
+                <a href="../../spam/shit-cap2user/rape-user.html">
+            
+                    
+                    互不联网公司是如何强奸用户的(持续更新)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../spam/damn-university.html">
+            
+                <a href="../../spam/damn-university.html">
+            
+                    
+                    吃屎系列：大学如何喂学生吃屎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../spam/recsys-biased-us.html">
+            
+                <a href="../../spam/recsys-biased-us.html">
+            
+                    
+                    推荐系统如何让我们变得极端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../spam/bull-shit-politics.html">
+            
+                <a href="../../spam/bull-shit-politics.html">
+            
+                    
+                    互联网政治圈观察日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../spam/gfw-history.html">
+            
+                <a href="../../spam/gfw-history.html">
+            
+                    
+                    中国网络防火长城简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../../spam/tj-linear-algebra.html">
+            
+                <a href="../../spam/tj-linear-algebra.html">
+            
+                    
+                    《线性代数》（同济版）——教科书中的耻辱柱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../../spam/zatsudan.html">
+            
+                <a href="../../spam/zatsudan.html">
+            
+                    
+                    杂谈
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.8.1" data-path="../../spam/workers-interview.html">
+            
+                <a href="../../spam/workers-interview.html">
+            
+                    
+                    访谈：为什么毛泽东时代工人的积极性很高？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8.2" data-path="../../spam/1990s-env.html">
+            
+                <a href="../../spam/1990s-env.html">
+            
+                    
+                    90年代到21世纪初的商业环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../../spam/why-not-domestic-phone.html">
+            
+                <a href="../../spam/why-not-domestic-phone.html">
+            
+                    
+                    为什么不应该用国产手机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../../spam/save-children.html">
+            
+                <a href="../../spam/save-children.html">
+            
+                    
+                    “救救孩子”
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../recipe/">
+            
+                <a href="../../recipe/">
+            
+                    
+                    随园食单
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../recipe/spaghetti_bolognese.html">
+            
+                <a href="../../recipe/spaghetti_bolognese.html">
+            
+                    
+                    ボロネーゼ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../recipe/tianjiuniang.html">
+            
+                <a href="../../recipe/tianjiuniang.html">
+            
+                    
+                    甜酒酿的制作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../recipe/herb_and_spice.html">
+            
+                <a href="../../recipe/herb_and_spice.html">
+            
+                    
+                    香草与香料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../recipe/pita.html">
+            
+                <a href="../../recipe/pita.html">
+            
+                    
+                    皮塔饼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../recipe/garlic-chives-omelette.html">
+            
+                <a href="../../recipe/garlic-chives-omelette.html">
+            
+                    
+                    韭菜鸡蛋饼
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Understanding LightGCN in a visualized way</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="understanding-lightgcn-in-a-visualized-way">Understanding LightGCN in a visualized way</h1>
+<p>In this article, I&apos;m going to introduce LightGCN, a new algorithm for collaborative filtering problem.</p>
+<h2 id="whats-lightgcn">What&apos;s LightGCN</h2>
+<p>LightGCN is a shorten of Light Graph Convolutional Neural-network, it&apos;s a new approach for collaborative filtering which published in SIGIR 2020.</p>
+<p>So, let&apos;s talk about what&apos;s the graph, what&apos;s the convolution and why it&apos;s called &quot;light&quot;.</p>
+<h3 id="graph">Graph</h3>
+<p>This is the graph we have:</p>
+<p><img src="../../img/2020-10-09-20-08-40.png" alt=""></p>
+<p>It can be represented as a heap of (user, item, interaction) triplets Of course, LightGCN is capable to use more than one kind of interaction (just create more LightGCN and concatenate them together).</p>
+<p>It&#x2019;s a bipartite graph of user-item interactions. The paper hasn&apos;t described but: it is capable to add user-user and item-item interactions.</p>
+<h3 id="convolution">Convolution</h3>
+<h4 id="how-to">How to</h4>
+<p>Let&apos;s recall about the convolution, I think convolution basically is a weighted moving average.</p>
+<p><img src="../../img/2020-10-09-20-08-41.gif" alt=""></p>
+<p>So, how we can extend convolutional operation to graph? The hardest problem is how to do the convolution on such a non-euclidean graph.</p>
+<p><img src="../../img/2020-10-09-20-14-20.png" alt=""></p>
+<p>Non-euclidean graph means we don&#x2019;t have a certain neighborhood number. But in common CNN we have a certain number of neighborhoods.</p>
+<p><img src="../../img/2020-10-09-20-15-33.png" alt=""></p>
+<p>Here&apos;s the solution, we just update the current node by doing a weighted sum operation from all neighbor nodes and do it again in the next layer. Then we use multi-layers to obtain high-order connectivity.</p>
+<p>So the &quot;kernel&quot; if GCN basically is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mrow><mi>u</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{ui}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02691em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">u</span><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>. In my POV, it&#x2019;s a low-pass filter.</p>
+<p>Let&apos;s compare it with convolutional operation on image: it looks weird. It seems like fixing the convolutional kernel but adjusting the input signal. (Even it&#x2019;s not a big deal since convolution operation is commutative.)</p>
+<h4 id="example">Example</h4>
+<p>So, let&apos;s take a look at this example to inspect what happened while we&apos;re doing the convolutional operator.</p>
+<p>I made a bipartite graph manually like this:</p>
+<p><img src="../../img/2020-10-09-20-20-02.png" alt=""></p>
+<p>First of all, we have to generate a symmetric adjacency matrix.</p>
+<p><img src="../../img/2020-10-09-20-21-06.png" alt=""></p>
+<p>This is the structure of the adjacency matrix, we don&apos;t have user2user or item2item interaction here. O is the zero matrix, R is the <strong>R</strong>elationship matrix it&#x2019;s a sparse matrix with user count rows and item count columns and the non-zero element is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mrow><mi>u</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{ui}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02691em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">u</span><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>, the weight between node u(ser) and node i(tem).</p>
+<p>Finally, we got the adjacency matrix like this:</p>
+<p><img src="../../img/2020-10-09-20-23-00.png" alt=""></p>
+<p>But this is not enough, the signal will be amplified after several layers, so we need to normalize it, there&apos;re several ways to do the normalization, we&apos;re using the method in the paper: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>A</mi></mrow><mo>^</mo></mover><mo>=</mo><msup><mi>D</mi><mrow><mo>&#x2212;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></msup><mi>A</mi><msup><mi>D</mi><mrow><mo>&#x2212;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">\hat{A}=D^{-\frac{1}{2}}AD^{-\frac{1}{2}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9540200000000001em;"></span><span class="strut bottom" style="height:0.9540200000000001em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">A</span></span></span><span style="top:-0.25233em;margin-left:0.27778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mtight">&#x2212;</span><span class="mord reset-scriptstyle scriptstyle uncramped mtight"><span class="mopen sizing reset-size5 size5 reset-scriptstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.344em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord scriptscriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span></span><span style="top:-0.22142857142857142em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle textstyle uncramped frac-line"></span></span><span style="top:-0.384em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped mtight"><span class="mord scriptscriptstyle uncramped mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-scriptstyle textstyle uncramped nulldelimiter"></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">A</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mtight">&#x2212;</span><span class="mord reset-scriptstyle scriptstyle uncramped mtight"><span class="mopen sizing reset-size5 size5 reset-scriptstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.344em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord scriptscriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span></span><span style="top:-0.22142857142857142em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle textstyle uncramped frac-line"></span></span><span style="top:-0.384em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped mtight"><span class="mord scriptscriptstyle uncramped mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-scriptstyle textstyle uncramped nulldelimiter"></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> The D is the degree matrix.</p>
+<p>This is the No.1 layer.</p>
+<p>Actually, before No.1 layer we have a No.0 layer and it is kind special, just an eye matrix, because <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mrow><mi>A</mi></mrow><mo>^</mo></mover><mn>0</mn></msup><mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">\hat{A}^0=I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9467699999999999em;"></span><span class="strut bottom" style="height:0.9467699999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">A</span></span></span><span style="top:-0.25233em;margin-left:0.27778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.07847em;">I</span></span></span></span></p>
+<p>Every node doing self-connection in the graph.</p>
+<p>Now we&apos;re going to generate No.2 layer which adjacency matrix is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mrow><mi>A</mi></mrow><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{A}^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9467699999999999em;"></span><span class="strut bottom" style="height:0.9467699999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">A</span></span></span><span style="top:-0.25233em;margin-left:0.27778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></p>
+<p><img src="../../img/2020-10-09-20-26-27.png" alt=""></p>
+<p>Since after jump twice, the user will connect to some other users only and the item will connect to some other items only, so the graph will split into 2 parts.</p>
+<p>It happened in every even layer, means layer No. 2 4 6 ...</p>
+<p><img src="../../img/2020-10-09-20-25-39.png" alt=""></p>
+<p>Here&apos;s the 3rd-order of the graph, we can see most of the nodes connected.</p>
+<p><img src="../../img/2020-10-09-20-27-29.png" alt=""></p>
+<p><img src="../../img/2020-10-09-20-27-42.png" alt=""></p>
+<p>The rest layers can be done in the same manner.</p>
+<h2 id="aggregation">Aggregation</h2>
+<p>Now we have every layer&apos;s output of the signal, let&apos;s sum it up and this is the output of the GCN: Node&apos;s embedding.</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>=</mo><msubsup><mo>&#x2211;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi></mrow></msubsup><mrow><msub><mi>&#x3B1;</mi><mi>k</mi></msub><msup><mover accent="true"><mrow><mi>A</mi></mrow><mo>^</mo></mover><mrow><mi>k</mi></mrow></msup><mi>E</mi></mrow></mrow><annotation encoding="application/x-tex">E_{out}=\sum_{k=0}^{N}{\alpha_k\hat{A}^{k}E}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9467699999999999em;"></span><span class="strut bottom" style="height:1.2467799999999998em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">o</span><span class="mord mathit mtight">u</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.0037em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">A</span></span></span><span style="top:-0.25233em;margin-left:0.27778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span></span></p>
+<p>There&apos;re several ways to sum it up, the paper chosen 1st one, means just let the weight as 1.</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>&#x3B1;</mi><mi>k</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha_k=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.0037em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>&#x3B1;</mi><mi>k</mi></msub><mo>=</mo><msubsup><mi>C</mi><mrow><mi>N</mi></mrow><mrow><mi>k</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\alpha_k=C^{k}_{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:1.124439em;vertical-align:-0.275331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.0037em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist"><span style="top:0.275331em;margin-left:-0.07153em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.10903em;">N</span></span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>&#x3B1;</mi><mi>k</mi></msub><mo>=</mo><mi>&#x3B2;</mi><mo>(</mo><mn>1</mn><mo>&#x2212;</mo><mi>&#x3B2;</mi><msup><mo>)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\alpha_k=\beta(1-\beta)^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:1.099108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.0037em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></li>
+</ol>
+<p>In deep learning, it&apos;s powerful because it&apos;s deep, so is this also doable in GCN?</p>
+<p>The answer is NO!</p>
+<p>Because in high-order layers we&apos;ll have the over-smoothing problem.</p>
+<p>Like what I wrote previously, this is a kind of low-pass filter, so finally we will have a very stable result, almost every node has the same embedding.</p>
+<p>This is No. 20 layer:</p>
+<p><img src="../../img/2020-10-09-20-31-16.png" alt=""></p>
+<p>No. 21 layer:</p>
+<p><img src="../../img/2020-10-09-20-31-23.png" alt=""></p>
+<p>And No. 22 layer:</p>
+<p><img src="../../img/2020-10-09-20-31-16 (1" alt="">.png&gt;)</p>
+<p>See? This is over-smoothing.</p>
+<h2 id="light">Light</h2>
+<p>Since we explained what is GCN, now let&apos;s take a look at why we called it LightGCN, what is the &quot;Light&quot;. Because this model is transformed from another model: NGCF.</p>
+<p>It simplified the message construction and aggregation, make it linear and direct:</p>
+<p><img src="../../img/2020-10-09-20-32-42.png" alt=""></p>
+<p><img src="../../img/2020-10-09-20-32-59.png" alt=""></p>
+<p>But why we remove them?</p>
+<p>The author did some ablation experiments on NGCF. And we found:</p>
+<ul>
+<li>the model perform better after removed feature transformation only</li>
+<li>the model perform worse after removed the non-linear activation function only</li>
+<li>The model performs much better after removing them all!</li>
+</ul>
+<p>So let&apos;s remove them all! And this is the LightGCN.</p>
+<h2 id="compare-with-mf">Compare With MF</h2>
+<p>For now, I already introduced all about LightGCN, but if you&apos;re careful enough, you may already found, the LightGCN finally output a node embedding and using the dot product of embeddings as the score, so basically, we can just extract the embedding result and save it as a matrix factorization model.</p>
+<p>Not only we can use MF to inference it directly, EVEN the parameter space, and the regularization items are also totally the same. So: Why LightGCN works? What made it different?</p>
+<p>Here&apos;s some of my personal POV, while we&apos;re doing the message bypass and aggregation, it equals to multiply a (sparse) matrix in a left-hand side part.</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub><mo>=</mo><msubsup><mo>&#x2211;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi></mrow></msubsup><mrow><msub><mi>&#x3B1;</mi><mi>k</mi></msub><msup><mover accent="true"><mrow><mi>A</mi></mrow><mo>^</mo></mover><mrow><mi>k</mi></mrow></msup><mi>E</mi></mrow><mo>=</mo><mo>(</mo><msubsup><mo>&#x2211;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi></mrow></msubsup><mrow><msub><mi>&#x3B1;</mi><mi>k</mi></msub><msup><mover accent="true"><mrow><mi>A</mi></mrow><mo>^</mo></mover><mrow><mi>k</mi></mrow></msup></mrow><mo>)</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E_{out}=\sum_{k=0}^{N}{\alpha_k\hat{A}^{k}E}=(\sum_{k=0}^{N}{\alpha_k\hat{A}^{k}})E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9467699999999999em;"></span><span class="strut bottom" style="height:1.2467799999999998em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">o</span><span class="mord mathit mtight">u</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.0037em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">A</span></span></span><span style="top:-0.25233em;margin-left:0.27778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span><span class="mrel">=</span><span class="mopen">(</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">0</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.0037em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">A</span></span></span><span style="top:-0.25233em;margin-left:0.27778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span></p>
+<p>I think this matrix is kind of a constraint or said it&apos;s a special kind of regularization item, constrained the gradient bypassed to the embedding.</p>
+<h3 id="more-about-special-regularization">More About Special Regularization</h3>
+<p>Not only in LightGCN, this technique is already applied widely.</p>
+<p>For example, in this paper, he&apos;s trying to contribute a CTR predict model, but they add some other subtasks in training and jointed the loss.</p>
+<p><img src="../../img/2020-10-09-20-37-16.png" alt=""></p>
+<p><img src="../../img/2020-10-09-20-37-23.png" alt=""></p>
+<p>Since they never used the model, why they have to train it?</p>
+<p>In my POV, it&apos;s a special kind of regularization, which means the embedding is not free, it should complete some other tasks at the same time to avoid overfitting.</p>
+<h2 id="experiment">Experiment</h2>
+<p>This is the result the author tested on some public dataset, it improved a lot.</p>
+<p><img src="../../img/2020-10-09-20-37-43.png" alt=""></p>
+<h2 id="future-work">Future Work</h2>
+<p>Maybe the next step we should care about:</p>
+<ul>
+<li>De-bias &amp; fairness</li>
+<li>Robustness</li>
+<li>Exploitation &amp; exploration trade-off</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://arxiv.org/pdf/2002.02126.pdf" target="_blank">LightGCN: Simplifying and Powering Graph ConvolutionNetwork for Recommendation</a></li>
+<li><a href="https://arxiv.org/pdf/1905.08108.pdf" target="_blank">Neural Graph Collaborative Filtering</a></li>
+<li><a href="https://arxiv.org/pdf/1906.04365.pdf" target="_blank">Representation Learning-Assisted Click-Through Rate Prediction</a></li>
+</ul>
+<div id="comment-wrapper" class="comment-wrapper clearfix">        <div class="comment-copyright">        <span class="title">Comments</span>        <span class="content">                Copyright &#xA9; luowei all right reserved, powered by                <a href="https://github.com/aleen42" target="_blank">aleen42</a>            </span>    </div>        <div class="modules"><div class="content-wrapper">    <div class="comment-list comment-wrapper f-dn">        <div class="empty-comments comment-item clearfix">Empty Comments</div>    </div>    <div class="editor-wrapper f-dn">        <div class="editor">        </div><!--        --><div>            <img class="user-avatar" src=".">            <i class="fa fa-sign-out" title="sign out" data-action="logout"></i>        </div>    </div>    <div class="auth-wrapper f-dn">        <div class="description">            <div class="title">Sign in <a href="https://github.com" target="_blank">GitHub</a></div>            <div class="content">                <p>As the plugin is integrated with a code management system like GitLab or GitHub, you may have to auth                    with your account before leaving comments around this article.</p>                <p>Notice: This plugin has used Cookie to store your token with an expiration.</p>            </div>        </div>        <div class="auth">            <button class="btn auth-btn">authorize</button>        </div>    </div></div></div>    <script type="text/javascript">        SYS_CONST = JSON.parse('{"redirect":"","clientId":"","repo":"luowei01/blogs","copyright":"Copyright © luowei","type":"github","host":"https://github.com","path":"ml/recsys/light_gcn.md"}');    </script></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 推荐系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ranknet.html" class="navigation navigation-next " aria-label="Next page: Learning To Rank 之 RankNet">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Understanding LightGCN in a visualized way","level":"1.2.2.1","depth":3,"next":{"title":"Learning To Rank 之 RankNet","level":"1.2.2.2","depth":3,"path":"ml/recsys/ranknet.md","ref":"ml/recsys/ranknet.md","articles":[]},"previous":{"title":"推荐系统","level":"1.2.2","depth":2,"path":"ml/recsys/README.md","ref":"ml/recsys/README.md","articles":[{"title":"Understanding LightGCN in a visualized way","level":"1.2.2.1","depth":3,"path":"ml/recsys/light_gcn.md","ref":"ml/recsys/light_gcn.md","articles":[]},{"title":"Learning To Rank 之 RankNet","level":"1.2.2.2","depth":3,"path":"ml/recsys/ranknet.md","ref":"ml/recsys/ranknet.md","articles":[]},{"title":"随想： BPR Loss 与 Hinger Loss","level":"1.2.2.3","depth":3,"path":"ml/recsys/bpr_and_hinger.md","ref":"ml/recsys/bpr_and_hinger.md","articles":[]},{"title":"关于AA测试和AB测试的一些思考","level":"1.2.2.4","depth":3,"path":"ml/recsys/ab_testing.md","ref":"ml/recsys/ab_testing.md","articles":[]},{"title":"无采样的矩阵分解","level":"1.2.2.5","depth":3,"path":"ml/recsys/non_sampling_mf.md","ref":"ml/recsys/non_sampling_mf.md","articles":[]},{"title":"收藏夹","level":"1.2.2.6","depth":3,"path":"ml/recsys/collection.md","ref":"ml/recsys/collection.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","prism","-highlight","localized-footer","mermaid-gb3","ga","accordion","comments-footer"],"pluginsConfig":{"chapter-fold":{},"prism":{},"emphasize":{},"accordion":{},"search":{},"localized-footer":{"filename":"FOOTER.md","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"comments-footer":{"type":"github","repo":"luowei01/blogs","copyright":"Copyright © luowei"},"alerts":{},"ga":{"configuration":"auto","token":"UA-153583635-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ml/recsys/light_gcn.md","mtime":"2023-11-20T06:47:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-15T12:32:59.274Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-comments-footer/comment.dist.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

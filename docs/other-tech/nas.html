@@ -1,0 +1,1358 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>构建家用NAS过程中的碎碎念 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comments-footer/comment.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="move2linux.html" />
+    
+    
+    <link rel="prev" href="innet.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ml/">
+            
+                <a href="../ml/">
+            
+                    
+                    机器学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ml/common/">
+            
+                <a href="../ml/common/">
+            
+                    
+                    一般话题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../ml/common/regularization.html">
+            
+                <a href="../ml/common/regularization.html">
+            
+                    
+                    再谈正则化项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../ml/common/conv.html">
+            
+                <a href="../ml/common/conv.html">
+            
+                    
+                    论文阅读：“快把卷积神经网络中的平移不变性带回来”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../ml/common/semi-supervised-learning.html">
+            
+                <a href="../ml/common/semi-supervised-learning.html">
+            
+                    
+                    半监督/无监督学习收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../ml/common/collection.html">
+            
+                <a href="../ml/common/collection.html">
+            
+                    
+                    收藏夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ml/recsys/">
+            
+                <a href="../ml/recsys/">
+            
+                    
+                    推荐系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../ml/recsys/light_gcn.html">
+            
+                <a href="../ml/recsys/light_gcn.html">
+            
+                    
+                    Understanding LightGCN in a visualized way
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../ml/recsys/ranknet.html">
+            
+                <a href="../ml/recsys/ranknet.html">
+            
+                    
+                    Learning To Rank 之 RankNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../ml/recsys/bpr_and_hinger.html">
+            
+                <a href="../ml/recsys/bpr_and_hinger.html">
+            
+                    
+                    随想： BPR Loss 与 Hinger Loss
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../ml/recsys/ab_testing.html">
+            
+                <a href="../ml/recsys/ab_testing.html">
+            
+                    
+                    关于AA测试和AB测试的一些思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../ml/recsys/non_sampling_mf.html">
+            
+                <a href="../ml/recsys/non_sampling_mf.html">
+            
+                    
+                    无采样的矩阵分解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../ml/recsys/collection.html">
+            
+                <a href="../ml/recsys/collection.html">
+            
+                    
+                    收藏夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ml/rl/">
+            
+                <a href="../ml/rl/">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../ml/rl/mab-summary.html">
+            
+                <a href="../ml/rl/mab-summary.html">
+            
+                    
+                    Re：从零开始的Multi-armed Bandit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../game201/">
+            
+                <a href="../game201/">
+            
+                    
+                    高级物理引擎实战指南笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../game201/mass_spring.html">
+            
+                <a href="../game201/mass_spring.html">
+            
+                    
+                    弹簧质点系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../game201/sph.html">
+            
+                <a href="../game201/sph.html">
+            
+                    
+                    光滑粒子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../game201/linear_eq_solver.html">
+            
+                <a href="../game201/linear_eq_solver.html">
+            
+                    
+                    专题：线性方程组求解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../FEM/">
+            
+                <a href="../FEM/">
+            
+                    
+                    有限单元法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../FEM/01-preface.html">
+            
+                <a href="../FEM/01-preface.html">
+            
+                    
+                    1. 引论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../FEM/02-direct-stiffness-method.html">
+            
+                <a href="../FEM/02-direct-stiffness-method.html">
+            
+                    
+                    2. 基于直接刚度法的杆系有限元方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../FEM/03-complex-deformable-body-1.html">
+            
+                <a href="../FEM/03-complex-deformable-body-1.html">
+            
+                    
+                    3. 针对复杂几何形状变形体的力学描述（1）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Web开发相关技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../web/jwt.html">
+            
+                <a href="../web/jwt.html">
+            
+                    
+                    JWT简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    技术杂文
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="https.html">
+            
+                <a href="https.html">
+            
+                    
+                    Let's encrypt -- 让我们一起愉快的使用HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="fuck-thunder.html">
+            
+                <a href="fuck-thunder.html">
+            
+                    
+                    干掉吸血雷，重塑和谐P2P环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="can-panel.html">
+            
+                <a href="can-panel.html">
+            
+                    
+                    开源CAN总线信号可编程台架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="mdadm.html">
+            
+                <a href="mdadm.html">
+            
+                    
+                    Linux下利用mdadm设置软件 RAID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="net-self-sufficient.html">
+            
+                <a href="net-self-sufficient.html">
+            
+                    
+                    互不联网时代的自给自足
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="cloud-or-not.html">
+            
+                <a href="cloud-or-not.html">
+            
+                    
+                    为什么我劝你不要使用云计算？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="innet.html">
+            
+                <a href="innet.html">
+            
+                    
+                    科学的公司内网连接技术选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.8" data-path="nas.html">
+            
+                <a href="nas.html">
+            
+                    
+                    构建家用NAS过程中的碎碎念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="move2linux.html">
+            
+                <a href="move2linux.html">
+            
+                    
+                    简易的Linux迁移指北
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="rsync-caused-problem.html">
+            
+                <a href="rsync-caused-problem.html">
+            
+                    
+                    记录一次rsync命令引起的异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="ffmpeg_qsv.html">
+            
+                <a href="ffmpeg_qsv.html">
+            
+                    
+                    为FFMPEG添加Intel QSV支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="note.html">
+            
+                <a href="note.html">
+            
+                    
+                    备忘录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="fukuoka-gaimenkirikae.html">
+            
+                <a href="fukuoka-gaimenkirikae.html">
+            
+                    
+                    福冈外免切替（中国驾照换日本驾照）攻略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="mysql-optimizer-in-clause.html">
+            
+                <a href="mysql-optimizer-in-clause.html">
+            
+                    
+                    记一个离谱的MySQL语句的性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="save-my-openwrt.html">
+            
+                <a href="save-my-openwrt.html">
+            
+                    
+                    拯救变砖的OpenWRT路由器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="frp.html">
+            
+                <a href="frp.html">
+            
+                    
+                    使用FRP进行内网穿透
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../spam/">
+            
+                <a href="../spam/">
+            
+                    
+                    政治不正确
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../spam/shit-cap2employee/">
+            
+                <a href="../spam/shit-cap2employee/">
+            
+                    
+                    吃屎系列：资本家如何喂员工吃屎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../spam/shit-cap2employee/huawei-251.html">
+            
+                <a href="../spam/shit-cap2employee/huawei-251.html">
+            
+                    
+                    华为251事件记忆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../spam/shit-cap2user/">
+            
+                <a href="../spam/shit-cap2user/">
+            
+                    
+                    吃屎系列：资本家如何喂用户吃屎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../spam/shit-cap2user/rape-user.html">
+            
+                <a href="../spam/shit-cap2user/rape-user.html">
+            
+                    
+                    互不联网公司是如何强奸用户的(持续更新)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../spam/damn-university.html">
+            
+                <a href="../spam/damn-university.html">
+            
+                    
+                    吃屎系列：大学如何喂学生吃屎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../spam/recsys-biased-us.html">
+            
+                <a href="../spam/recsys-biased-us.html">
+            
+                    
+                    推荐系统如何让我们变得极端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../spam/bull-shit-politics.html">
+            
+                <a href="../spam/bull-shit-politics.html">
+            
+                    
+                    互联网政治圈观察日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../spam/gfw-history.html">
+            
+                <a href="../spam/gfw-history.html">
+            
+                    
+                    中国网络防火长城简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../spam/tj-linear-algebra.html">
+            
+                <a href="../spam/tj-linear-algebra.html">
+            
+                    
+                    《线性代数》（同济版）——教科书中的耻辱柱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../spam/zatsudan.html">
+            
+                <a href="../spam/zatsudan.html">
+            
+                    
+                    杂谈
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.8.1" data-path="../spam/workers-interview.html">
+            
+                <a href="../spam/workers-interview.html">
+            
+                    
+                    访谈：为什么毛泽东时代工人的积极性很高？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8.2" data-path="../spam/1990s-env.html">
+            
+                <a href="../spam/1990s-env.html">
+            
+                    
+                    90年代到21世纪初的商业环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../spam/why-not-domestic-phone.html">
+            
+                <a href="../spam/why-not-domestic-phone.html">
+            
+                    
+                    为什么不应该用国产手机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../spam/save-children.html">
+            
+                <a href="../spam/save-children.html">
+            
+                    
+                    “救救孩子”
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../recipe/">
+            
+                <a href="../recipe/">
+            
+                    
+                    随园食单
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../recipe/spaghetti_bolognese.html">
+            
+                <a href="../recipe/spaghetti_bolognese.html">
+            
+                    
+                    ボロネーゼ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../recipe/tianjiuniang.html">
+            
+                <a href="../recipe/tianjiuniang.html">
+            
+                    
+                    甜酒酿的制作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../recipe/herb_and_spice.html">
+            
+                <a href="../recipe/herb_and_spice.html">
+            
+                    
+                    香草与香料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../recipe/pita.html">
+            
+                <a href="../recipe/pita.html">
+            
+                    
+                    皮塔饼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../recipe/garlic-chives-omelette.html">
+            
+                <a href="../recipe/garlic-chives-omelette.html">
+            
+                    
+                    韭菜鸡蛋饼
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >构建家用NAS过程中的碎碎念</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6784;&#x5EFA;&#x5BB6;&#x7528;nas&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x788E;&#x788E;&#x5FF5;">&#x6784;&#x5EFA;&#x5BB6;&#x7528;NAS&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x788E;&#x788E;&#x5FF5;</h1>
+<h2 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h2>
+<p>&#x6700;&#x8FD1;&#x5B58;&#x50A8;&#x544A;&#x6025;&#xFF0C;&#x8981;&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x627E;&#x4E2A;&#x5BB6;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x59CB;&#x7422;&#x78E8;NAS&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x8D2D;&#x4E70;&#xFF0C;&#x642D;&#x5EFA;NAS&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9605;&#x8BFB;&#x4E86;&#x5F88;&#x591A;&#x8D44;&#x6599;&#xFF0C;&#x4E5F;&#x53D1;&#x73B0;&#x4E86;&#x4E0D;&#x5C11;&#x5751;&#xFF0C;&#x7559;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x7ED9;&#x5927;&#x5BB6;&#x53C2;&#x8003;&#x3002;
+&#x672C;&#x6587;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x7EC4;&#x5EFA;&#x81EA;&#x5B85;&#x6216;&#x8005;&#x5C0F;&#x578B;&#x4F01;&#x4E1A;&#x4F7F;&#x7528;NAS&#x7684;&#x5165;&#x95E8;&#x624B;&#x518C;&#xFF0C;&#x5F88;&#x591A;&#x63AA;&#x65BD;&#x6216;&#x56E0;&#x5730;&#x5236;&#x5B9C;&#x3001;&#x6216;&#x9700;&#x8981;&#x6709;&#x6548;&#x5229;&#x7528;&#x5DF2;&#x6709;&#x7684;&#x7535;&#x5B50;&#x4EA7;&#x54C1;&#xFF0C;&#x7A33;&#x5B9A;&#x6027;&#x4E5F;&#x5E76;&#x975E;&#x6700;&#x4F18;&#xFF0C;&#x56E0;&#x6B64;&#x5E76;&#x4E0D;&#x9002;&#x7528;&#x8F83;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x5546;&#x4E1A;&#x573A;&#x666F;&#x3002;</p>
+<h2 id="nas&#x662F;&#xFF1F;">NAS&#x662F;&#xFF1F;</h2>
+<p>&#x7F51;&#x7EDC;&#x9644;&#x52A0;&#x5B58;&#x50A8;&#xFF08;&#x82F1;&#x8BED;&#xFF1A;Network Attached Storage&#xFF0C;&#x7F29;&#x5199;&#xFF1A;NAS&#xFF09;&#xFF0C;&#x7C97;&#x7565;&#x7684;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x7684;&#x4E00;&#x4E2A;&#x786C;&#x76D8;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x6982;&#x5FF5;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x9605;&#x8BFB;&#x4E00;&#x4E0B;Wiki&#xFF1A;<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E9%99%84%E5%8A%A0%E5%84%B2%E5%AD%98" target="_blank">NAS &#x7EF4;&#x57FA;&#x767E;&#x79D1;</a>&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6CD5;&#x7FFB;&#x5899;&#xFF0C;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;&#xFF1A;<a href="https://baike.baidu.com/item/NAS/3465615" target="_blank">NAS &#x767E;&#x5EA6;&#x767E;&#x79D1;</a>&#x3002;</p>
+<p>&#x5728;&#x6211;&#x6765;&#x770B;&#xFF0C;NAS&#x5C31;&#x662F;&#x4E00;&#x53F0;&#x7535;&#x8111;&#xFF0C;&#x53EA;&#x662F;&#x8FD9;&#x53F0;&#x7535;&#x8111;&#x88C5;&#x7740;&#x6BD4;&#x522B;&#x7684;&#x7535;&#x8111;&#x591A;&#x5F97;&#x591A;&#x7684;&#x786C;&#x76D8;&#xFF0C;&#x5E76;&#x4E14;&#x5229;&#x7528;&#x5382;&#x5546;&#x5F00;&#x53D1;&#x7684;&#x7279;&#x6B8A;&#x8F6F;&#x4EF6;&#x5B8C;&#x6210;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x529F;&#x80FD;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;&#x5E08;&#x6765;&#x8BF4;&#xFF0C;&#x7528;&#x65E7;&#x7535;&#x8111;&#xFF08;&#x53F0;&#x5F0F;&#x673A;&#xFF0C;&#x53EF;&#x5BB9;&#x7EB3;&#x591A;&#x5757;&#x786C;&#x76D8;&#x624D;&#x884C;&#xFF09;DIY&#x4E00;&#x4E2A;NAS&#x53EF;&#x80FD;&#x66F4;&#x52A0;&#x4FBF;&#x5B9C;&#x548C;&#x53EF;&#x73A9;&#xFF0C;&#x6211;&#x624B;&#x5934;&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x65E7;&#x7535;&#x8111;&#xFF0C;&#x4E5F;&#x5FD9;&#x4E8E;&#x5176;&#x5B83;&#x4E8B;&#x60C5;&#x4E0D;&#x613F;&#x82B1;&#x51E0;&#x5468;&#x53BB;&#x6298;&#x817E;&#xFF08;&#x5176;&#x5B9E;&#x6298;&#x817E;&#x8FC7;&#x4E86;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4E70;&#x4E86;&#x4E00;&#x53F0;NAS&#x3002;</p>
+<h2 id="&#x4F60;&#x662F;&#x4E0D;&#x662F;&#x9700;&#x8981;nas&#xFF1F;">&#x4F60;&#x662F;&#x4E0D;&#x662F;&#x9700;&#x8981;NAS&#xFF1F;</h2>
+<h3 id="&#x4ECE;&#x6570;&#x636E;&#x91CF;&#x548C;&#x6027;&#x8D28;&#x4E0A;&#x8003;&#x8651;">&#x4ECE;&#x6570;&#x636E;&#x91CF;&#x548C;&#x6027;&#x8D28;&#x4E0A;&#x8003;&#x8651;</h3>
+<p>&#x90A3;&#x4E48;&#x4F60;&#x662F;&#x5426;&#x9700;&#x8981;NAS&#x5462;&#xFF1F;&#x5982;&#x679C;&#xFF1A;</p>
+<ol>
+<li>&#x4F60;&#x6709;&#x5927;&#x91CF;&#xFF08;&#x6211;&#x7684;&#x7406;&#x89E3;&#x662F;&#x8D85;&#x8FC7;300G&#xFF09;&#x7684;&#x9759;&#x6001;&#x6570;&#x636E;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5199;&#x5165;&#x540E;&#x53EA;&#x662F;&#x8BFB;&#x53D6;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#xFF09;&#x9700;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x7528;NAS&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x6709;&#x5927;&#x91CF;&#xFF08;&#x6211;&#x7684;&#x7406;&#x89E3;&#x662F;&#x8D85;&#x8FC7;10G&#xFF09;&#x7684;&#x52A8;&#x6001;&#x6570;&#x636E;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x968F;&#x65F6;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#xFF09;&#x9700;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x7528;NAS&#x3002;</li>
+<li>&#x4E0D;&#x8981;&#x6C42;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#xFF0C;&#x4F46;&#x662F;&#x6570;&#x636E;&#x91CF;&#x5927;&#x4E8E;8TB&#x7684;&#x3002;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#xFF0C;&#x6216;&#x8005;&#x6570;&#x636E;&#x91CF;&#x4E0D;&#x591F;&#xFF0C;NAS&#x5219;&#x672A;&#x5FC5;&#x5FC5;&#x8981;&#x3002;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#x7684;&#x60C5;&#x51B5;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x7684;&#x9759;&#x6001;&#x6570;&#x636E;&#x5C11;&#x4E8E;300GB&#xFF0C;&#x90A3;&#x4E48;&#x4F7F;&#x7528;&#x79FB;&#x52A8;&#x786C;&#x76D8;+&#x523B;&#x5F55;&#x84DD;&#x5149;&#x789F;&#x5907;&#x4EFD;&#x662F;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x52A8;&#x6001;&#x6570;&#x636E;&#x5C11;&#x4E8E;10G&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x9009;&#x7528;GoogleDrive&#x6216;&#x8005;OneDrive&#x8FD9;&#x6837;&#x7684;&#x7F51;&#x76D8;&#x6765;&#x7684;&#x66F4;&#x52A0;&#x8F7B;&#x677E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4E3B;&#x673A;&#x5185;&#x7528;&#x4E24;&#x4E2A;&#x786C;&#x76D8;&#x5206;&#x533A;&#x7EC4;&#x5EFA;RAID&#x5B58;&#x50A8;&#x3002;
+&#x518D;&#x6216;&#x8005;&#xFF0C;&#x4F60;&#x6839;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#xFF0C;&#x6570;&#x636E;&#x4E22;&#x4E86;&#x95EE;&#x9898;&#x4E5F;&#x4E0D;&#x5927;&#xFF0C;&#x90A3;&#x4E48;&#x4E70;&#x4E00;&#x4E2A;&#x5927;&#x4E00;&#x70B9;&#x7684;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x6216;&#x8005;&#x7535;&#x8111;&#x5185;&#x7F6E;&#x786C;&#x76D8;&#x662F;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
+<h3 id="&#x4ECE;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x4E0A;&#x8003;&#x8651;">&#x4ECE;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x4E0A;&#x8003;&#x8651;</h3>
+<p>&#x4E3E;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x662F;&#x4E2A;&#x5C0F;&#x5DE5;&#x4F5C;&#x5BA4;&#xFF0C;&#x5927;&#x5BB6;&#x5206;&#x6563;&#x529E;&#x516C;&#xFF0C;&#x4E14;&#x9700;&#x8981;&#x526A;&#x8F91;&#x89C6;&#x9891;&#x516C;&#x7528;&#x4E00;&#x4E9B;&#x7D20;&#x6750;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x9009;&#x7528;NAS&#x3002;&#x4F46;&#x662F;NAS&#x4E0D;&#x662F;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x7565;&#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x5DE5;&#x7A0B;&#x5E08;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x7528;&#x7535;&#x8111;&#x642D;&#x5EFA;&#x8D77;&#x6765;&#x540C;&#x6837;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x7F51;&#x7EDC;&#x6CA1;&#x4EC0;&#x4E48;&#x6982;&#x5FF5;&#xFF0C;&#x90A3;&#x4E48;NAS&#x53EF;&#x80FD;&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#x4E86;&#x3002;</p>
+<h2 id="nas&#x7684;&#x8D2D;&#x4E70;">NAS&#x7684;&#x8D2D;&#x4E70;</h2>
+<p>&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x4E0D;&#x8003;&#x8651;&#x4E70;&#x5230;&#x5047;&#x8D27;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#xFF0C;&#x56E0;&#x4E3A;&#x5382;&#x5546;&#x6709;&#x4E13;&#x5C5E;&#x8F6F;&#x4EF6;&#xFF09;&#xFF0C;&#x7740;&#x91CD;&#x8BF4;&#x4E00;&#x4E0B;NAS&#x8D2D;&#x4E70;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;&#x3002;
+&#x6211;&#x4E5F;&#x4F1A;&#x8BF4;&#x4E00;&#x4E0B;&#x6211;&#x81EA;&#x5DF1;&#x7684;&#x9009;&#x62E9;&#xFF1A;QNAP TS-451D2&#xFF08;4GB&#xFF09;+&#x81EA;&#x5DF1;&#x53C8;&#x4E70;&#x4E86;&#x4E00;&#x5757;4GB&#x5185;&#x5B58; + &#x897F;&#x90E8;&#x6570;&#x636E;NAS&#x7EA2;&#x76D8;&#xFF08;8TB&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x7684;&#x9009;&#x62E9;&#x672A;&#x5FC5;&#x9002;&#x5408;&#x4F60;&#xFF0C;&#x8BF7;&#x8010;&#x5FC3;&#x8BFB;&#x5B8C;&#x81EA;&#x5DF1;&#x9009;&#x62E9;&#x3002;</p>
+<h3 id="nas&#x672C;&#x8EAB;">NAS&#x672C;&#x8EAB;</h3>
+<p>&#x5728;&#x8D2D;&#x4E70;NAS&#x672C;&#x8EAB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x770B;&#x786C;&#x4EF6;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x53EF;&#x5BB9;&#x7EB3;&#x786C;&#x76D8;&#x7684;&#x6570;&#x91CF;</li>
+<li>&#x7F51;&#x5361;&#x7684;&#x901F;&#x5EA6;</li>
+<li>CPU&#x7684;&#x6307;&#x4EE4;&#x96C6;</li>
+</ul>
+<p>&#x53EF;&#x5BB9;&#x7EB3;&#x786C;&#x76D8;&#x7684;&#x6570;&#x91CF;&#x51B3;&#x5B9A;&#x4E86;&#x4F60;&#x7684;&#x5B58;&#x50A8;&#x80FD;&#x529B;&#x7684;&#x4E0A;&#x9650;&#xFF0C;&#x4E5F;&#x51B3;&#x5B9A;&#x4E86;&#x4F60;&#x80FD;&#x505A;&#x600E;&#x6837;&#x7684;RAID&#xFF08;&#x4E0B;&#x6587;&#x6162;&#x6162;&#x8BF4;&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x662F;&#x5426;&#x6709;&#x7A7A;&#x4F59;&#x7684;&#x69FD;&#x4F4D;&#x7528;SSD&#x505A;&#x8BBF;&#x95EE;&#x52A0;&#x901F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#x7684;&#x8BDD;&#xFF0C;&#x69FD;&#x4F4D;&#x5343;&#x4E07;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E;2&#x4E2A;&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x7EC4;&#x5EFA;RAID1&#x3002;
+&#x6211;&#x81EA;&#x5DF1;&#x8D2D;&#x4E70;&#x7684;&#x662F;4&#x4E2A;&#x69FD;&#x4F4D;&#xFF08;SLOT&#xFF09;&#x7684;NAS&#x3002;
+&#x7F51;&#x5361;&#x7684;&#x901F;&#x5EA6;&#x51B3;&#x5B9A;&#x4E86;&#x4F60;&#x7684;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5343;&#x5146;&#x7F51;&#x5361;&#x5DF2;&#x7ECF;&#x662F;&#x6807;&#x914D;&#x4E86;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#xFF0C;&#x5BF9;&#x4E8E;&#x6709;&#x7EBF;&#x5E03;&#x7EBF;&#x8FDE;&#x63A5;&#x56F0;&#x96BE;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9009;&#x7528;&#x5E26;&#x65E0;&#x7EBF;&#x529F;&#x80FD;&#x7684;NAS&#xFF0C;&#x6216;&#x8005;&#x786E;&#x8BA4;&#x4E00;&#x4E0B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x7528;&#x5916;&#x63A5;&#x65E0;&#x7EBF;&#x7F51;&#x5361;&#x89E3;&#x51B3;&#x3002;
+CPU&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x4E00;&#x822C;&#x662F;&#x4E0D;&#x592A;&#x88AB;&#x5173;&#x5FC3;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5728;NAS&#x4E0A;&#x8FD0;&#x884C;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x6216;&#x8005;NAS&#x652F;&#x6301;&#x5BB9;&#x5668;&#x5316;&#xFF0C;&#x90A3;&#x6700;&#x597D;&#x9009;&#x62E9;AMD64&#x6307;&#x4EE4;&#x96C6;&#x7684;NAS&#x3002;</p>
+<p>&#x5382;&#x5546;&#x7684;&#x8BDD;&#xFF0C;&#x4E00;&#x822C;&#x4E5F;&#x5C31;&#x662F;&#x7FA4;&#x6656;&#xFF0C;QNAP&#xFF0C;IO-DATA&#x4E4B;&#x7C7B;&#x3002;&#x641C;&#x7D22;NAS&#x5927;&#x591A;&#x53EF;&#x4EE5;&#x641C;&#x5230;&#x8FD9;&#x4E9B;&#x5382;&#x5546;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x505A;&#x63A8;&#x8350;&#x4E86;&#x3002;&#x6211;&#x81EA;&#x5DF1;&#x7684;&#x8BDD;&#xFF0C;&#x6700;&#x540E;&#x9009;&#x4E86;QNAP&#x3002;</p>
+<p>&#x65E2;&#x7136;&#x662F;&#x7535;&#x8111;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x9020;&#x53F0;&#x5F0F;&#x673A;&#xFF0C;&#x751A;&#x81F3;&#x81EA;&#x5DF1;&#x8D2D;&#x4E70;&#x5200;&#x7247;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x5728;&#x7F51;&#x4E0A;&#x5F88;&#x96BE;&#x627E;&#x5230;&#x67D0;&#x79CD;&#x53F0;&#x5F0F;&#x673A;&#x7A76;&#x7ADF;&#x652F;&#x6301;&#x591A;&#x5C11;&#x786C;&#x76D8;&#x7684;&#x69FD;&#x4F4D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x5E72;&#x8106;&#x4E70;&#x4E86;&#x4E13;&#x7528;NAS&#x3002;</p>
+<h3 id="&#x786C;&#x76D8;&#xFF08;hdd&#xFF09;">&#x786C;&#x76D8;&#xFF08;HDD&#xFF09;</h3>
+<p>&#x673A;&#x68B0;&#x786C;&#x76D8;&#x4FBF;&#x5B9C;&#xFF0C;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x5927;&#xFF0C;&#x662F;NAS&#x7684;&#x9996;&#x9009;&#x3002;&#x4F46;&#x662F;NAS&#x7684;&#x8BDD;&#xFF0C;&#x6700;&#x597D;&#x9009;&#x7528;NAS&#x7684;&#x4E13;&#x7528;&#x78C1;&#x76D8;&#xFF0C;&#x6BD4;&#x5982;&#x5E0C;&#x6377;&#x7684;&#x94C1;&#x72FC;&#x6216;&#x8005;WD&#x7684;&#x7EA2;&#x76D8;&#x4E4B;&#x7C7B;&#xFF0C;NAS&#x76D8;&#x548C;&#x5176;&#x5B83;&#x76D8;&#x7684;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x78C1;&#x76D8;&#x7684;&#x63A7;&#x5236;&#x5668;&#x4F1A;&#x4E3B;&#x52A8;&#x5411;&#x7CFB;&#x7EDF;&#x62A5;&#x544A;&#x78C1;&#x76D8;&#x9519;&#x8BEF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5361;&#x4F4F;&#x4E0D;&#x52A8;&#x3002;&#x957F;&#x65F6;&#x95F4;&#x5361;&#x4F4F;&#x4E0D;&#x52A8;&#x7684;&#x786C;&#x76D8;&#x4F1A;&#x88AB;NAS&#x8BA4;&#x4E3A;&#x662F;&#x574F;&#x76D8;&#x800C;&#x8E22;&#x4E0B;&#x7EBF;&#x62A5;&#x9519;&#x3002;&#x8003;&#x8651;&#x5230;&#x786C;&#x76D8;&#x5176;&#x5B9E;&#x6CA1;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x574F;&#xFF08;<del>&#x5176;&#x5B9E;&#x4E00;&#x6454;&#x5C31;&#x574F;</del>&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x7528;&#x975E;&#x4E13;&#x95E8;&#x4E3A;NAS&#x8BBE;&#x8BA1;&#x7684;&#x786C;&#x76D8;&#x4E5F;&#x4E0D;&#x662F;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x3002;</p>
+<p>&#x5BB9;&#x91CF;&#x4F60;&#x81EA;&#x5DF1;&#x80AF;&#x5B9A;&#x4F1A;&#x8003;&#x8651;&#xFF0C;&#x9664;&#x4E86;&#x662F;&#x5426;&#x4E13;&#x7528;NAS&#x7684;&#x63A7;&#x5236;&#x5668;&#x4EE5;&#x5916;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#x662F;SMR&#x4E0E;CMR&#x3002;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x6210;&#x672C;&#x5927;&#x81F4;&#x4E00;&#x6837;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;SMR&#x901A;&#x8FC7;&#x727A;&#x7272;&#x4E86;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#x6362;&#x53D6;&#x66F4;&#x5927;&#x7684;&#x5BB9;&#x91CF;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#xFF0C;&#x540C;&#x6837;&#x5BB9;&#x91CF;&#x4E0B;&#xFF0C;SMR&#x6210;&#x672C;&#x4F4E;&#x901F;&#x5EA6;&#x6162;&#x3002;&#x5982;&#x679C;&#x662F;&#x7EC4;RAID1&#x7684;&#x8BDD;&#xFF0C;&#x5BF9;&#x968F;&#x673A;&#x8BFB;&#x5199;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x66F4;&#x9AD8;&#xFF0C;SMR&#x5C31;&#x66F4;&#x6162;&#x4E86;&#x3002;&#xFF08;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;SMR&#x4E0D;&#x4EC5;&#x901F;&#x5EA6;&#x6162;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x9760;&#x8C31;&#xFF0C;&#x6570;&#x636E;&#x76F8;&#x5F53;&#x5BB9;&#x6613;&#x4E22;&#xFF09;&#x3002;
+&#x6BD4;&#x8D77;&#x5E0C;&#x6377;&#x7684;&#x6545;&#x969C;&#x7387;&#xFF0C;WD&#xFF08;&#x897F;&#x90E8;&#x6570;&#x636E;&#xFF09;&#x7684;NAS&#x7EA2;&#x76D8;&#x7CFB;&#x5217;&#x4E00;&#x76F4;&#x662F;&#x201C;&#x9760;&#x8C31;&#x201D;&#x7684;&#x8C61;&#x5F81;&#xFF0C;&#x76F4;&#x5230;&#x6709;&#x4E00;&#x5929;&#xFF0C;&#x6709;&#x4EBA;&#x53D1;&#x73B0;WD&#x7684;&#x90E8;&#x5206;&#x5BB9;&#x91CF;&#x7684;NAS&#x7EA2;&#x76D8;&#x5C45;&#x7136;&#x7528;SMR&#x6280;&#x672F;&#xFF0C;&#x5E76;&#x4E14;&#x56E0;&#x6B64;&#x9020;&#x6210;&#x81EA;&#x5DF1;&#x6570;&#x636E;&#x635F;&#x574F;&#x3002;
+&#x4E8E;&#x662F;&#x4E4E;&#x88AB;&#x7FA4;&#x4F17;&#x540A;&#x8D77;&#x6765;&#x66B4;&#x6253;&#xFF0C;&#x88AB;&#x5E0C;&#x6377;&#x5632;&#x8BBD;&#xFF0C;&#x6253;&#x5230;&#x540E;&#x6765;&#x897F;&#x6570;&#x614C;&#x4E86;&#xFF0C;&#x7F51;&#x4E0A;&#x516C;&#x5E03;&#x4E86;&#x6240;&#x6709;SMR&#x578B;&#x53F7;&#x7684;&#x786C;&#x76D8;&#xFF08;&#x4F46;&#x662F;&#x4E0D;&#x5168;&#x9762;&#xFF0C;&#x6BD4;&#x5982;&#x7EFF;&#x76D8;&#x5C31;&#x6CA1;&#x4EBA;&#x8BF4;&#x5F97;&#x6E05;&#x695A;&#xFF0C;&#x4F46;&#x662F;&#x4F30;&#x8BA1;&#x6709;SMR&#xFF09;&#x3002;
+&#x7528;NAS&#x7684;&#x4EBA;&#x4E00;&#x5B9A;&#x5BF9;&#x6570;&#x636E;&#x4E5F;&#x662F;&#x6BD4;&#x8F83;&#x91CD;&#x89C6;&#x7684;&#xFF0C;&#x5927;&#x591A;&#x4F1A;&#x4E5F;&#x7EC4;RAID1&#xFF0C;&#x6240;&#x4EE5;WD&#x7684;NAS&#x7CFB;&#x5217;&#x7EA2;&#x76D8;&#x7528;SMR&#x771F;&#x7684;&#x662F;&#x6740;&#x4EBA;&#x8BDB;&#x5FC3;&#x554A;&#x3002;</p>
+<p>&#x4F01;&#x4E1A;&#x77E5;&#x4E0D;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x7684;&#x76D8;&#x5783;&#x573E;&#x5462;&#xFF1F;&#x5F53;&#x7136;&#x77E5;&#x9053;&#xFF0C;CMR&#x7684;&#x76D8;&#x4E00;&#x822C;&#x80FD;&#x4FDD;3&#x5E74;&#xFF0C;SMR&#x7684;&#x76D8;&#x4E00;&#x822C;&#x53EA;&#x4FDD;1&#x5E74;&#x3002;&#x4F5C;&#x4E3A;&#x6D88;&#x8D39;&#x8005;&#x600E;&#x4E48;&#x8BC6;&#x522B;SMR&#x5462;&#xFF1F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x53EA;&#x770B;&#x8D2D;&#x4E70;&#x9875;&#x9762;+&#x5B98;&#x7F51;&#x67E5;&#x8BE2;&#x578B;&#x53F7;&#xFF0C;&#x6CA1;&#x6709;&#x8BF4;&#x662F;CMR&#x7684;&#x4E00;&#x5F8B;&#x8BA4;&#x5B9A;&#x4E3A;SMR&#xFF0C;&#x5B81;&#x53EF;&#x9519;&#x6740;&#x4E0D;&#x8981;&#x653E;&#x8FC7;&#x3002;</p>
+<p>&#x90A3;&#x4E48;SMR&#x5C31;&#x771F;&#x7684;&#x4E00;&#x65E0;&#x662F;&#x5904;&#x5417;&#xFF1F;&#x4E5F;&#x4E0D;&#x662F;&#xFF0C;SMR&#x6BD4;CMR&#x73AF;&#x4FDD;&#xFF0C;&#x4E14;SMR&#x6BD4;CMR&#x8981;&#x4FBF;&#x5B9C;&#xFF0C;&#x4ECE;&#x6210;&#x672C;&#x7684;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#xFF0C;&#x53EF;&#x4EE5;&#x4E70;&#x4E00;&#x5757;&#x653E;&#x4E0D;&#x91CD;&#x8981;&#x7684;&#x6BDB;&#x7247;&#x513F;&#x554A;&#x7535;&#x5F71;&#x554A;&#x4E4B;&#x7C7B;&#x7684;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x7ECF;&#x5E38;&#x8BFB;&#x5199;&#x7684;&#x9759;&#x6001;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7EC4;RAID1&#x4FDD;&#x8BC1;&#x53EF;&#x9760;&#x6027;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x6210;&#x672C;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6210;&#x672C;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x654F;&#x611F;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x4E0D;&#x5EFA;&#x8BAE;&#x5728;NAS&#x4E2D;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;SMR&#x76D8;&#x7684;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x5E0C;&#x6377;&#x5F88;&#x826F;&#x5FC3;&#x7684;&#x4E0D;&#x5728;NAS&#x76D8;&#x91CC;&#x7528;SMR&#xFF0C;&#x4F46;&#x662F;&#x6545;&#x969C;&#x7387;&#x4ECD;&#x7136;&#x6BD4;&#x897F;&#x90E8;&#x6570;&#x636E;&#x7684;&#x9AD8;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x6700;&#x540E;&#x8FD8;&#x662F;&#x9009;&#x62E9;&#x4E86;&#x897F;&#x90E8;&#x6570;&#x636E;&#x7684;NAS&#x7EA2;&#x76D8;&#xFF0C;&#x5E76;&#x5728;&#x8D2D;&#x4E70;&#x524D;&#x786E;&#x8BA4;&#x8BE5;&#x578B;&#x53F7;&#x662F;CMR&#x3002;</p>
+<h4 id="&#x5BF9;io-data&#x7684;&#x6279;&#x5224;">&#x5BF9;IO-DATA&#x7684;&#x6279;&#x5224;</h4>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6279;&#x5224;&#x4E00;&#x4E0B;IO-DATA&#xFF0C;&#x6211;&#x672C;&#x6765;&#x770B;&#x4E0A;&#x4E86;&#x4E00;&#x6B3E;IO-DATA&#x7684;&#x5BB6;&#x7528;NAS&#xFF0C;&#x9664;&#x4E86;&#x786C;&#x76D8;&#x7684;&#x62C6;&#x6362;&#x4E0D;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4EE5;&#x53CA;&#x7528;&#x7684;CPU&#x662F;ARM&#x67B6;&#x6784;&#x800C;&#x4E0D;&#x662F;AMD64&#x4EE5;&#x5916;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x3002;
+&#x95EE;&#x9898;&#x5C31;&#x51FA;&#x5728;&#x5185;&#x7F6E;&#x7684;&#x786C;&#x76D8;&#x4E0A;&#xFF0C;&#x5185;&#x7F6E;&#x7684;&#x786C;&#x76D8;&#x6709;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x4EF7;&#x683C;&#x76F8;&#x5F53;&#x9ED1;&#x5FC3;&#xFF0C;&#x4EE5;&#x53CA;&#x7528;&#x76D8;&#x76F8;&#x5F53;&#x4E0D;&#x4E13;&#x4E1A;&#x3002;</p>
+<p>IO-DATA&#x8FD9;&#x6B3E;&#x673A;&#x5668;&#x5728;Amazon&#x4E0A;&#x88F8;&#x673A;&#x7684;&#x4EF7;&#x683C;&#x662F;&#x4E0D;&#x5230;25000&#x65E5;&#x5143;&#x5DE6;&#x53F3;&#xFF0C;16TB&#xFF08;2x8TB&#xFF09;&#x7248;&#x672C;&#x7684;&#x4EF7;&#x683C;&#x662F;112800&#x65E5;&#x5143;&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x6298;&#x5408;&#x6BCF;&#x5757;8TB&#x76D8;&#x7684;&#x4EF7;&#x683C;&#x662F;43900&#x65E5;&#x5143;&#x3002;
+&#x5982;&#x679C;&#x7528;&#x8FD9;&#x4E2A;&#x4EF7;&#x683C;&#x53BB;&#x4E70;8TB&#x7684;NAS&#x7EA2;&#x76D8;&#xFF08;CMR&#xFF09;&#xFF0C;&#x4EF7;&#x683C;&#x662F;20000&#x65E5;&#x5143;&#x5DE6;&#x53F3;&#xFF0C;4W+&#x65E5;&#x5143;&#x7684;&#x4EF7;&#x683C;&#x6211;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x4E70;&#x6700;&#x8D35;&#x7684;&#x91D1;&#x76D8;&#x7CFB;&#x5217;&#x4E86;&#x3002;</p>
+<p>&#x4F46;&#x662F;IO-DATA&#x5185;&#x7F6E;&#x7684;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x76D8;&#x5462;&#xFF1F;&#x5F88;&#x96BE;&#x627E;&#x7684;&#x4E00;&#x4E2A;&#x5BA3;&#x4F20;&#x753B;&#x518C;&#x4E0A;&#x7684;&#x5B98;&#x65B9;&#x7167;&#x7247;&#x663E;&#x793A;&#x662F;&#x7EFF;&#x76D8;&#xFF0C;&#x6211;&#x4E4B;&#x524D;&#x5728;&#x5B9E;&#x4F53;&#x5E97;&#x63A2;&#x67E5;&#x8FC7;&#x662F;&#x4F3C;&#x4E4E;&#x67D0;&#x79CD;SMR&#x76D8;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x8BA9;&#x7528;&#x6237;&#x82B1;&#x6700;&#x8D35;&#x7684;&#x94B1;&#xFF0C;&#x4E70;&#x6700;&#x5DEE;&#x7684;&#x76D8;&#x3002;
+&#x6211;&#x53BB;&#x5B9E;&#x4F53;&#x5E97;&#x770B;&#x8FC7;&#x5305;&#x88C5;&#xFF0C;&#x5305;&#x88C5;&#x4E0A;&#x7684;&#x5C0F;&#x5B57;&#x5199;&#x4E86;&#x76D8;&#x7684;&#x578B;&#x53F7;&#xFF08;&#x6211;&#x5E94;&#x8BE5;&#x6CA1;&#x8BB0;&#x9519;&#xFF09;&#xFF0C;&#x66F4;&#x9E21;&#x8D3C;&#x7684;&#x662F;IO-DATA&#x7684;&#x5B98;&#x7F51;&#x9875;&#x9762;&#xFF0C;&#x5B98;&#x7F51;&#x4E0A;&#x4E0D;&#x653E;&#x5305;&#x88C5;&#x7684;&#x9AD8;&#x6E05;&#x5927;&#x56FE;&#x3002;
+&#x56E0;&#x4E3A;&#x9AD8;&#x6E05;&#x5927;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x6E05;&#x5C0F;&#x5B57;&#xFF0C;&#x4E3A;&#x4E86;&#x4E0D;&#x8BA9;&#x4F60;&#x770B;&#x6E05;&#x695A;&#x5C0F;&#x5B57;&#xFF0C;&#x6240;&#x4EE5;&#x5B98;&#x7F51;&#x4E00;&#x5F8B;&#x662F;640*480&#x7684;&#x56FE;&#x3002;</p>
+<p>&#x66F4;&#x66F4;&#x9E21;&#x8D3C;&#x7684;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x53BB;IO-DATA&#x7684;&#x66FF;&#x6362;&#x914D;&#x4EF6;&#x552E;&#x5356;&#x533A;&#xFF0C;&#x90A3;&#x91CC;&#x5356;&#x7684;&#x76D8;&#x57FA;&#x672C;&#x90FD;&#x662F;CMR&#x7684;&#x597D;&#x76D8;&#xFF0C;&#x6BD4;&#x5982;WD&#x7684;&#x7EA2;&#x76D8;&#xFF0C;&#x53EA;&#x6709;&#x5185;&#x7F6E;&#x5728;&#x673A;&#x5668;&#x4E2D;&#x7684;&#x76D8;&#x662F;&#x7EFF;&#x76D8;&#x3002;</p>
+<h3 id="&#x786C;&#x76D8;&#xFF08;ssd&#xFF09;">&#x786C;&#x76D8;&#xFF08;SSD&#xFF09;</h3>
+<p>&#x5373;&#x4F7F;&#x6700;&#x4FBF;&#x5B9C;&#x7684;SSD&#xFF0C;&#x5B58;&#x50A8;&#x6210;&#x672C;&#x4E5F;&#x662F;HDD&#x7684;4&#x500D;&#x5DE6;&#x53F3;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x662F;&#x4E0D;&#x9009;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;SSD&#x8D35;&#x5728;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x7684;NAS&#xFF08;&#x6BD4;&#x5982;QNAP&#x7684;Qtier&#x6280;&#x672F;&#xFF09;&#x4F1A;&#x652F;&#x6301;SSD&#x548C;HDD&#x5171;&#x540C;&#x7EC4;&#x6210;&#x5B58;&#x50A8;&#x6C60;&#xFF0C;&#x6570;&#x636E;&#x5C3D;&#x91CF;&#x5B58;&#x5728;SSD&#x91CC;&#x9762;&#xFF0C;&#x968F;&#x540E;&#x5C06;&#x7528;&#x4E0D;&#x5230;&#x7684;&#x6570;&#x636E;&#x632A;&#x5230;HDD&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5728;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x91CC;&#x5927;&#x81F4;&#x83B7;&#x5F97;SSD&#x7684;&#x6027;&#x80FD;&#x548C;HDD&#x7684;&#x6210;&#x672C;&#x3002;&#x7C7B;&#x4F3C;Apple&#x7684;Fusion&#x786C;&#x76D8;&#x6280;&#x672F;&#x3002;</p>
+<p>&#x8BF4;&#x5230;SSD&#x7684;&#x9009;&#x8D2D;&#xFF0C;&#x5176;&#x5B9E;&#x662F;&#x4E2A;&#x5F88;&#x6DF1;&#x7684;&#x5927;&#x5751;&#xFF0C;&#x5F71;&#x54CD;&#x4E00;&#x4E2A;SSD&#x6700;&#x7EC8;&#x6027;&#x80FD;&#x7684;&#x662F;&#x4E3B;&#x63A7;&#xFF0C;&#x7F13;&#x5B58;&#x548C;&#x9897;&#x7C92;&#x5171;&#x540C;&#x51B3;&#x5B9A;&#x7684;&#xFF1A;</p>
+<ol>
+<li>&#x4E3B;&#x63A7;&#x7684;&#x8BDD;&#x82B1;&#x6837;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x53EA;&#x662F;&#x6709;&#x597D;&#x574F;&#x5FEB;&#x6162;&#x4E4B;&#x5206;&#xFF0C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x5148;&#x8FDB;&#x843D;&#x540E;&#x4E4B;&#x522B;&#x3002;</li>
+<li>&#x7F13;&#x5B58;&#x7684;&#x8BDD;&#x6709;&#x4E24;&#x5C42;&#x610F;&#x601D;<ul>
+<li>&#x4E00;&#x5C42;&#x662F;&#x7528;&#x5185;&#x5B58;&#xFF08;DRAM&#xFF09;&#x9897;&#x7C92;&#x52A0;&#x901F;&#x8BBF;&#x95EE;&#xFF0C;&#x8FD9;&#x91CC;&#x82B1;&#x6837;&#x4E5F;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;</li>
+<li>&#x53E6;&#x4E00;&#x5C42;&#x662F;&#x9897;&#x7C92;&#x201C;&#x964D;&#x7EA7;&#x201D;&#xFF0C;&#x6BD4;&#x5982;&#x660E;&#x660E;&#x662F;QLC&#x6216;&#x8005;TLC&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x6210;SLC&#x7528;&#xFF0C;&#x9897;&#x7C92;&#x5BB9;&#x91CF;&#x6682;&#x65F6;&#x51CF;&#x5230;&#x51E0;&#x5206;&#x4E4B;&#x4E00;&#x4F46;&#x662F;&#x901F;&#x5EA6;&#x5C31;&#x80FD;&#x5927;&#x5E45;&#x63D0;&#x5347;&#xFF0C;&#x7B49;&#x5230;&#x5199;&#x5165;&#x6570;&#x636E;&#x8D85;&#x8FC7;&#x8FD9;&#x90E8;&#x5206;&#x518D;&#x542F;&#x7528;TLC&#x6216;&#x8005;QLC&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5199;&#x5165;&#x5C31;&#x6162;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x901F;&#x5EA6;&#x5F88;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x5199;&#x5165;&#x4E86;&#x51E0;&#x5206;&#x4E4B;&#x4E00;&#x7684;&#x5BB9;&#x91CF;&#x540E;&#x5F00;&#x59CB;&#x6389;&#x901F;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+</ul>
+</li>
+<li>&#x9897;&#x7C92;&#x7684;&#x82B1;&#x6837;&#x5C31;&#x591A;&#x4E86;&#xFF1A;<ul>
+<li>SLC/MLC/TLC/QLC&#xFF0C;&#x6307;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#xFF08;Cell&#xFF09;&#x5B58;&#x50A8;1/2/3/4Bit&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x7535;&#x538B;&#x5206;&#x4E3A;2/4/8/16&#x4EFD;&#x3002;&#x968F;&#x7740;&#x4FE1;&#x606F;&#x91CF;&#x589E;&#x5927;&#xFF0C;&#x53EF;&#x8BFB;&#x5199;&#x6B21;&#x6570;&#xFF08;&#x5BFF;&#x547D;&#xFF09;&#x4E0B;&#x964D;&#xFF0C;&#x901F;&#x5EA6;&#x4E5F;&#x76F8;&#x5E94;&#x7684;&#x53D8;&#x6162;&#x3002;&#x8FD9;&#x91CC;&#x591A;&#x8BF4;&#x4E00;&#x53E5;&#xFF0C;&#x867D;&#x7136;&#x5BFF;&#x547D;&#x4E0B;&#x964D;&#xFF0C;&#x4F46;&#x662F;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#x4E00;&#x822C;&#x80FD;&#x6BD4;&#x7535;&#x8111;&#x90FD;&#x6D3B;&#x7684;&#x4E45;&#x2026;&#x2026;</li>
+<li>&#x539F;&#x7247;/&#x767D;&#x7247;/&#x9ED1;&#x7247;&#xFF1A;&#x4F60;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x53EF;&#x9760;&#x6027;&#x9010;&#x5C42;&#x9012;&#x51CF;&#xFF0C;&#x767D;&#x7247;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x539F;&#x5382;&#x6700;&#x4E25;&#x683C;&#x7684;&#x6D4B;&#x8BD5;&#x4E0D;&#x5408;&#x683C;&#xFF0C;&#x4F46;&#x662F;&#x80FD;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x6253;&#x6807;&#x7B7E;&#x51FA;&#x552E;&#x7ED9;&#x4E8C;&#x7EBF;&#x5C0F;&#x5382;&#x7528;&#x3002;&#x9ED1;&#x7247;&#x5C31;&#x662F;&#x6B8B;&#x6B21;&#x54C1;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x5728;&#x9897;&#x7C92;&#x4E0A;&#x5212;&#x7EBF;&#x8868;&#x660E;&#x62A5;&#x5E9F;&#xFF0C;&#x4E00;&#x4E9B;&#x9ED1;&#x5FC3;&#x5382;&#x5546;&#x4F1A;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x91D1;&#x6CF0;&#x514B;&#x4E03;&#x5F69;&#x8679;&#x4E4B;&#x7C7B;&#x3002;</li>
+<li>&#x6279;&#x6B21;&#xFF1A;&#x9897;&#x7C92;&#x662F;&#x9700;&#x8981;&#x8C03;&#x6821;&#x7684;&#xFF0C;&#x51C6;&#x786E;&#x7684;&#x8BF4;&#x8C03;&#x6574;&#x7684;&#x4E0D;&#x662F;&#x9897;&#x7C92;&#x662F;&#x4E3B;&#x63A7;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x6279;&#x6B21;&#xFF0C;&#x8C03;&#x6821;&#x5C31;&#x65E0;&#x4ECE;&#x8C08;&#x8D77;&#xFF0C;&#x5C31;&#x4F1A;&#x6709;&#x6027;&#x80FD;&#x548C;&#x7A33;&#x5B9A;&#x6027;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p>&#x8FD9;&#x91CC;&#x5217;&#x51FA;&#x4E00;&#x4E9B;SSD&#x5382;&#x5546;&#x7684;&#x9ED1;&#x6599;&#xFF1A;</p>
+<p>&#x5382;&#x5546;&#x5BA3;&#x4F20;&#x81EA;&#x5DF1;&#x7684;SSD&#x7684;&#x65F6;&#x5019;&#x5F88;&#x591A;&#x90FD;&#x5BA3;&#x4F20;&#x201C;&#x6700;&#x9AD8;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#x53EF;&#x8FBE;&#x201D;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#x5F80;&#x5F80;&#x662F;&#x964D;&#x7EA7;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#xFF0C;&#x4E00;&#x65E6;&#x5199;&#x5165;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x5BB9;&#x91CF;&#xFF0C;&#x901F;&#x5EA6;&#x5C31;&#x7ACB;&#x523B;&#x6389;&#x4E0B;&#x6765;&#x4E86;&#x3002;
+&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5382;&#x5546;&#x4F1A;&#x9488;&#x5BF9;&#x6D4B;&#x8BD5;&#x8F6F;&#x4EF6;&#x505A;&#x4F18;&#x5316;&#xFF0C;&#x76D1;&#x6D4B;&#x5230;&#x5199;&#x5165;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B9E;&#x9645;&#x4E0D;&#x5199;&#x5165;&#x786C;&#x76D8;&#xFF0C;&#x5BFC;&#x81F4;&#x770B;&#x4E0A;&#x53BB;&#x6027;&#x80FD;&#x7206;&#x70B8;&#x3002;
+&#x4EE5;&#x53CA;&#x8FD9;&#x4E2A;&#x53C2;&#x8003;&#x6750;&#x6599;&#xFF1A;<a href="https://zhuanlan.zhihu.com/p/166162142" target="_blank">&#x8FD9;&#x4E9B;&#x786C;&#x76D8;&#x4E0D;&#x8981;&#x4E70;&#xFF01;2020&#x90A3;&#x4E9B;&#x4E0D;&#x63A8;&#x8350;&#x7684;&#x56FA;&#x6001;&#x786C;&#x76D8;</a> <a href="https://archive.vn/hSDBR" target="_blank">&#x300C;&#x5B58;&#x6863;&#x94FE;&#x63A5;&#x300D;</a></p>
+<ul>
+<li>&#x5927;&#x5510; SSD &#x865A;&#x5047;&#x5BA3;&#x4F20;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;QLC&#x9897;&#x7C92;&#x7684;&#x56FA;&#x6001;&#x5BA3;&#x4F20;&#x6210;TLC</li>
+<li>&#x957F;&#x82AF; SSD &#x865A;&#x5047;&#x5BA3;&#x4F20;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;QLC&#x9897;&#x7C92;&#x7684;&#x56FA;&#x6001;&#x5BA3;&#x4F20;&#x6210;TLC&#xFF0C;&#x8FD8;&#x628A;&#x4F4E;&#x7AEF;&#x5165;&#x95E8;&#x4E3B;&#x63A7;&#x5BA3;&#x4F20;&#x4E3A;&#x9AD8;&#x7AEF;&#x4E3B;&#x63A7;</li>
+<li>&#x6D77;&#x5EB7;&#x5A01;&#x89C6; SSD &#x4E3B;&#x63A7;&#x964D;&#x7EA7;&#x865A;&#x5047;&#x5BA3;&#x4F20;&#xFF0C;&#x9897;&#x7C92;&#x9ED1;&#x7247;&#x56DE;&#x6536;&#x7247;&#x6DF7;&#x7528;&#xFF0C;QLC&#x5192;&#x5145;TLC&#xFF0C;&#x66FE;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x56FD;&#x4EA7;&#x56FA;&#x6001;&#x4E4B;&#x5149;&#xFF0C;&#x540E;&#x6765;&#x53D1;&#x73B0;&#x548C;&#x4E0A;&#x9762;&#x90FD;&#x662F;&#x4E00;&#x8DEF;&#x8D27;&#x8272;&#x3002;</li>
+<li>&#x2026;&#x2026;</li>
+</ul>
+<p>&#x603B;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5BF9;&#x5E38;&#x7528;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x52A0;&#x901F;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x9009;&#x4E00;&#x5757;&#x4E0D;&#x5927;&#x7684;&#xFF08;&#x6BD4;&#x5982;100G&#x5DE6;&#x53F3;&#xFF09;&#x7684;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x597D;&#x7684;SSD&#xFF0C;&#x7EC4;&#x6210;Qtier&#x5B58;&#x50A8;&#x6C60;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x7535;&#x8111;DIY NAS&#x7684;&#x670B;&#x53CB;&#xFF0C;&#x6211;&#x63A8;&#x8350;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#xFF1A;<a href="https://open-cas.github.io/" target="_blank">Open Cache Acceleration Software</a> &#x76F8;&#x4FE1;&#x4F1A;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;</p>
+<h2 id="nas&#x7684;&#x642D;&#x5EFA;&#x548C;&#x7BA1;&#x7406;">NAS&#x7684;&#x642D;&#x5EFA;&#x548C;&#x7BA1;&#x7406;</h2>
+<h3 id="&#x5173;&#x4E8E;raid">&#x5173;&#x4E8E;RAID</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x77E5;&#x9053;RAID&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x9605;&#x8BFB;<a href="https://zh.wikipedia.org/zh-cn/RAID" target="_blank">&#x7EF4;&#x57FA;&#x767E;&#x79D1; RAID</a>&#x3002;
+&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x7EC4;&#x5EFA;RAID1&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4E0D;&#x662F;&#x5F88;&#x63A8;&#x8350;RAID5&#x6216;&#x8005;RAID6&#xFF0C;&#x968F;&#x673A;&#x8BFB;&#x5199;&#x7684;&#x6027;&#x80FD;&#x5E76;&#x4E0D;&#x597D;&#xFF08;MongoDB&#x5C31;&#x63A8;&#x8350;&#x7528;&#x6237;&#x4E0D;&#x8981;&#x7528;RAID5/6&#xFF0C;&#x53C2;&#x8003;<a href="https://docs.mongodb.com/manual/administration/production-notes/index.html#raid" target="_blank">&#x8FD9;&#x4E2A;&#x6587;&#x6863;</a>&#xFF09;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x4E00;&#x65E6;&#x786C;&#x76D8;&#x5931;&#x6548;&#xFF0C;&#x91CD;&#x5EFA;&#x7684;&#x6210;&#x529F;&#x7387;&#x592A;&#x4F4E;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x7684;&#x8BDD;&#x7EC4;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;2&#x4E2A;8TB&#x78C1;&#x76D8;&#x7684;RAID1&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x6709;&#x4E86;8TB&#x53EF;&#x9760;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x53EF;&#x9760;&#x5B58;&#x50A8;&#x8981;&#x9760;RAID&#xFF0C;&#x8FD8;&#x5F97;&#x4ECE;&#x673A;&#x68B0;&#x786C;&#x76D8;&#x7684;&#x5931;&#x6548;&#x8BF4;&#x8D77;&#x3002;
+&#x786C;&#x76D8;&#x7684;&#x5931;&#x6548;&#xFF0C;&#x5F80;&#x5F80;&#x96BE;&#x4EE5;&#x9884;&#x6D4B;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x7684;&#x5382;&#x5546;&#x90FD;&#x8BF4;&#x81EA;&#x5DF1;&#x6709;&#x7B97;&#x6CD5;&#x53EF;&#x4EE5;&#x6839;&#x636E;S.M.A.R.T.&#x53C2;&#x6570;&#x9884;&#x6D4B;&#x5931;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x9884;&#x6D4B;&#x5E76;&#x4E0D;&#x5BB9;&#x6613;&#x3002;&#xFF08;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;S.M.A.R.T.&#xFF0C;&#x53EF;&#x4EE5;&#x770B;<a href="https://zh.wikipedia.org/zh-hans/S.M.A.R.T." target="_blank">&#x8FD9;&#x4E2A;Wiki</a>&#xFF09;&#x3002;</p>
+<p>&#x66FE;&#x6709;&#x4E91;&#x5B58;&#x50A8;&#x7684;&#x5382;&#x5546;&#x505A;&#x8FC7;&#x7EDF;&#x8BA1;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4E00;&#x7BC7;2014&#x5E74;&#x7684;Blog&#xFF0C;&#x5728;4&#x4E07;&#x5757;&#x786C;&#x76D8;&#x5B58;&#x50A8;100PB&#x7684;&#x6570;&#x636E;&#x4E0A;&#x7684;&#x7814;&#x7A76;&#x8868;&#x660E;&#xFF0C;SMART&#x7684;5&#xFF0C;187&#xFF0C;188&#xFF0C;197&#xFF0C;198&#x53C2;&#x6570;&#x5BF9;&#x5931;&#x6548;&#x9884;&#x6D4B;&#x6709;&#x7528;&#xFF1A;<a href="https://www.backblaze.com/blog/hard-drive-smart-stats/" target="_blank">Hard Drive SMART Stats</a></p>
+<p>&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x96BE;&#x4EE5;&#x9884;&#x6D4B;&#x5931;&#x6548;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x4E0D;&#x5982;&#x968F;&#x65F6;&#x5907;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;RAID&#x7684;&#x4F5C;&#x7528;&#x3002;
+&#x9700;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F;&#xFF0C;SSD&#x6CA1;&#x6709;HDD&#x7684;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x53EA;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x8D35;&#x800C;&#x5DF2;&#x2026;&#x2026;&#x6240;&#x4EE5;SSD&#x7EC4;RAID&#x7684;&#x9700;&#x6C42;&#x5C31;&#x4E0D;&#x90A3;&#x4E48;&#x8FEB;&#x5207;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x4E3B;&#x673A;&#x642D;&#x5EFA;RAID&#xFF0C;&#x9664;&#x4E86;&#x4E70;&#x4E13;&#x7528;&#x786C;&#x4EF6;&#x4EE5;&#x5916;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x8F6F;&#x4EF6;RAID&#xFF0C;&#x8BE6;&#x7EC6;&#x8BF7;&#x53C2;&#x7167;&#x8FD9;&#x4E2A;Blog&#xFF1A;<a href="mdadm.html">Linux&#x4E0B;&#x5229;&#x7528;mdadm&#x8BBE;&#x7F6E;&#x8F6F;&#x4EF6; RAID</a></p>
+<h3 id="&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x534F;&#x8BAE;">&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x534F;&#x8BAE;</h3>
+<p>&#x4E00;&#x822C;&#x7684;&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x534F;&#x8BAE;&#x6709;SMB/NFS/FTP/AFP&#xFF08;&#x82F9;&#x679C;&#x624D;&#x7528;&#xFF09;/...&#x3002;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5B58;&#x53D6;&#x666E;&#x901A;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;SMB&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5728;Linux&#x4E0A;&#xFF0C;&#x5E0C;&#x671B;&#x67D0;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x653E;&#x5230;NAS&#x4E0A;&#xFF0C;&#x90A3;&#x4F60;&#x6700;&#x597D;&#x7528;NFS&#x7684;&#x65B9;&#x5F0F;&#x6302;&#x8F7D;&#xFF0C;SMB&#xFF08;&#x6216;&#x8005;&#x8BF4;CIFS&#xFF09;&#x4E0D;&#x652F;&#x6301;&#x8BF8;&#x5982;&#x8F6F;&#x94FE;&#x63A5;&#x4E4B;&#x7C7B;&#x7684;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x4F46;&#x662F;SMB&#x7684;&#x597D;&#x5904;&#x662F;&#x7B80;&#x5355;&#x6613;&#x7528;&#xFF0C;&#x5E26;&#x8F83;&#x597D;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;&#xFF0C;NFSv4&#x534F;&#x8BAE;&#x7684;&#x8BDD;&#x6309;&#x8BF4;&#x662F;&#x6709;ACL&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5F88;&#x591A;&#x5382;&#x5546;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x51FA;&#x4E8E;&#x517C;&#x5BB9;&#x8003;&#x8651;&#xFF09;&#xFF0C;&#x6302;&#x8F7D;&#x4E5F;&#x662F;&#x4F7F;&#x7528;IP&#x5730;&#x5740;&#x5728;&#x505A;&#x9A8C;&#x8BC1;&#xFF0C;&#x6240;&#x4EE5;&#x5B89;&#x5168;&#x6027;&#x4E0D;&#x5982;SMB&#x534F;&#x8BAE;&#x3002;</p>
+<p>Linux&#x4E0A;&#x7684;&#x8BDD;&#xFF0C;NFS&#x6211;&#x5C31;&#x4E0D;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;SMB&#x534F;&#x8BAE;&#x53EF;&#x4EE5;&#x7528;Samba&#x8F6F;&#x4EF6;&#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="&#x7279;&#x6B8A;&#x5B58;&#x50A8;&#x534F;&#x8BAE;">&#x7279;&#x6B8A;&#x5B58;&#x50A8;&#x534F;&#x8BAE;</h3>
+<p>&#x5E7F;&#x4E49;&#x7684;&#x8BF4;&#xFF0C;&#x517C;&#x5BB9;Amazon S3&#x63A5;&#x53E3;&#x7684;&#x5B58;&#x50A8;&#x7A0B;&#x5E8F;&#xFF0C;&#x6BD4;&#x5982;Minio&#x6216;&#x8005;SeaweedFS&#xFF0C;&#x4E43;&#x81F3;MySQL&#x6216;&#x8005;MongoDB&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x5E93;&#x4E5F;&#x7B97;&#x662F;&#x7F51;&#x7EDC;&#x5B58;&#x50A8;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x5E0C;&#x671B;&#x5B58;&#x50A8;&#x4E00;&#x4E9B;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x7528;&#x4E86;&#x5BB9;&#x5668;&#x542F;&#x52A8;MongoDB&#x3002;
+&#x8FD9;&#x4E2A;&#x4E3B;&#x8981;&#x662F;&#x9488;&#x5BF9;&#x7A0B;&#x5E8F;&#x5458;&#x7FA4;&#x4F53;&#x7684;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9700;&#x8981;Amazon S3&#x517C;&#x5BB9;&#x5B58;&#x50A8;&#x3002;</p>
+<p>&#x5176;&#x5B9E;&#x6709;&#x597D;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;S3&#x517C;&#x5BB9;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x6211;&#x4E70;&#x7684;NAS&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5382;&#x5546;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x53EB;QuObject&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x517C;&#x5BB9;S3&#x6216;&#x8005;Swift&#x7684;&#x63A5;&#x53E3;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x542F;&#x52A8;Minio&#x6216;&#x8005;SeaweedFS&#xFF08;&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x5176;&#x5B83;&#x5F00;&#x6E90;&#x7684;S3&#x5B58;&#x50A8;&#x9009;&#x62E9;&#xFF09;&#x3002;
+&#x4F46;&#x662F;&#x6211;&#x6700;&#x540E;&#x9009;&#x7684;&#x662F;SeaweedFS&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x7684;&#x5C0F;&#x6587;&#x4EF6;&#x592A;&#x591A;&#x4E86;&#xFF0C;&#x5176;&#x5B83;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x56FA;&#x7136;&#x65B9;&#x4FBF;&#x2014;&#x2014;&#x6307;&#x7684;&#x662F;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x5230;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF0C;&#x4F46;&#x662F;&#x5C0F;&#x6587;&#x4EF6;&#x7684;&#x5B58;&#x50A8;&#x65E0;&#x8BBA;&#x5BF9;&#x4E0E;NAS&#x8FD8;&#x662F;&#x666E;&#x901A;&#x7535;&#x8111;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x707E;&#x96BE;&#x3002;
+&#x4E0D;&#x8FC7;&#x6709;&#x4E00;&#x70B9;&#x597D;&#x7684;&#x662F;&#xFF0C;&#x5176;&#x5B9E;QNAP&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;&#x4E86;Volume&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x7B97;&#x5F88;&#x591A;&#x5C0F;&#x6587;&#x4EF6;&#xFF0C;&#x5907;&#x4EFD;&#x8D77;&#x6765;&#x5E76;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x75DB;&#x82E6;&#x3002;
+&#x4E0D;&#x8FC7;&#x6211;&#x7684;SeaweedFS&#x5728;&#x8FD9;&#x91CC;&#x771F;&#x7684;&#x662F;&#x725B;&#x5200;&#x6740;&#x9E21;&#xFF0C;SeaweedFS&#x662F;&#x53EF;&#x4EE5;&#x652F;&#x6491;&#x96C6;&#x7FA4;&#x4E43;&#x81F3;&#x591A;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x8FD9;&#x4E9B;&#x534F;&#x8BAE;&#x6216;&#x8005;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x63A8;&#x8350;&#x80FD;&#x591F;&#x8FD0;&#x884C;Docker Container&#x7684;NAS&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E3B;&#x8981;&#x4F9D;&#x8D56;S3&#x534F;&#x8BAE;&#x6216;&#x8005;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6211;&#x66F4;&#x63A8;&#x8350;&#x4F60;&#x81EA;&#x5DF1;&#x7528;&#x7535;&#x8111;&#x642D;&#x5EFA;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x7684;&#x4E3B;&#x8981;&#x8BBF;&#x95EE;&#x9700;&#x6C42;&#x5E76;&#x4E0D;&#x662F;&#x6587;&#x4EF6;&#x4E86;&#xFF0C;&#x800C;&#x4E3B;&#x8981;&#x7684;&#x8D1F;&#x8F7D;&#x4E5F;&#x4E0D;&#x518D;&#x662F;IO&#x800C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x8FD8;&#x6709;&#x5927;&#x91CF;&#x8BA1;&#x7B97;&#xFF0C;NAS&#x7684;CPU&#x4E00;&#x822C;&#x90FD;&#x6BD4;&#x8F83;&#x5B71;&#x5F31;&#xFF0C;&#x5F80;&#x5F80;&#x7279;&#x6B8A;&#x8BBE;&#x8BA1;&#x7684;&#x786C;&#x4EF6;&#x52A0;&#x901F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x81EA;&#x5EFA;&#x53EF;&#x80FD;&#x66F4;&#x597D;&#x3002;</p>
+<h3 id="&#x7F51;&#x7EDC;">&#x7F51;&#x7EDC;</h3>
+<p>&#x8FD9;&#x4E00;&#x8282;&#x4E3B;&#x8981;&#x7ED9;&#x9700;&#x8981;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x7684;&#x4EBA;&#x3002;</p>
+<p>&#x5728;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x7AE0;&#xFF1A;<a href="cloud-or-not.html">&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x529D;&#x4F60;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x4E91;&#x8BA1;&#x7B97;&#xFF1F;</a> &#x91CC;&#x9762;&#xFF0C;&#x6211;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x8FC7;&#x5982;&#x679C;&#x5BB6;&#x91CC;&#x6709;&#x516C;&#x7F51;IP&#xFF0C;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x4E0D;&#x7528;&#x4E91;&#x670D;&#x52A1;&#x81EA;&#x5DF1;&#x642D;&#x5EFA;&#xFF0C;&#x6216;&#x8005;&#x5E72;&#x8106;&#x4F7F;&#x7528;&#x5185;&#x7F51;&#x7A7F;&#x900F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x540C;&#x7406;&#x3002;&#x5C31;&#x7B97;&#x4F60;&#x81EA;&#x5DF1;&#x6CA1;&#x6709;&#x516C;&#x7F51;IP&#xFF0C;&#x5382;&#x5546;&#x4E00;&#x822C;&#x4E5F;&#x4F1A;&#x63D0;&#x4F9B;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x76F8;&#x5F53;&#x4E8E;&#x6570;&#x636E;&#x8981;&#x4ECE;&#x5382;&#x5546;&#x7684;&#x7F51;&#x7EDC;&#x4E0A;&#x7ECF;&#x8FC7;&#xFF0C;&#x6709;&#x6CC4;&#x6F0F;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x6240;&#x4EE5;&#x5382;&#x5546;&#x4E00;&#x822C;&#x4E5F;&#x4F1A;&#x63D0;&#x9192;&#x4E0D;&#x8981;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F20;&#x8F93;&#x673A;&#x5BC6;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x98CE;&#x9669;&#x662F;&#xFF0C;&#x6BD4;&#x5982;&#x4E3A;&#x4E86;&#x914D;&#x5408;&#x76D1;&#x7BA1;&#xFF0C;<a href="https://www.ithome.com/0/514/611.htm" target="_blank">&#x7FA4;&#x6656; NAS &#x7528;&#x6237;&#x987B;&#x5728;&#x5E74;&#x5E95;&#x524D;&#x7ED1;&#x5B9A;&#x624B;&#x673A;&#x53F7;&#xFF0C;&#x5426;&#x5219;&#x5C06; &#x201C;&#x65AD;&#x7F51;&#x201D;</a>&#x3002;&#x6240;&#x4EE5;&#x4E4B;&#x540E;&#x5982;&#x679C;&#x4E3A;&#x4E86;&#x914D;&#x5408;&#x76D1;&#x7BA1;&#xFF0C;&#x5BF9;&#x7ECF;&#x8FC7;&#x5382;&#x5546;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5BA1;&#x67E5;&#x4E5F;&#x4E0D;&#x662F;&#x6CA1;&#x6709;&#x53EF;&#x80FD;&#xFF0C;&#x8BF7;&#x52A1;&#x5FC5;&#x6CE8;&#x610F;&#xFF08;&#x4E0D;&#x8FC7;&#x76EE;&#x524D;&#x770B;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x628A;&#x5BA1;&#x67E5;&#x4E0B;&#x6C89;&#x5230;&#x4E2A;&#x4EBA;&#x673A;&#x5668;&#x91CC;&#xFF0C;&#x6211;&#x5927;&#x80C6;&#x7684;&#x63A8;&#x6D4B;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x5BA1;&#x67E5;&#x8005;&#x4E0D;&#x60F3;&#x505A;&#x8FD9;&#x6837;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x800C;&#x662F;&#x4E0D;&#x8BBA;&#x6570;&#x636E;&#x91CF;&#x8FD8;&#x662F;&#x8BA1;&#x7B97;&#x91CF;&#x90FD;&#x4E0D;&#x53EF;&#x884C;&#xFF09;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;<a href="https://www.zerotier.com/" target="_blank">ZeroTier</a>&#x6765;&#x7EC4;&#x5EFA;&#x8DE8;&#x533A;&#x57DF;&#x7684;&#x5C40;&#x57DF;&#x7F51;&#xFF0C;&#x6211;&#x81EA;&#x5DF1;&#x76EE;&#x524D;&#x7528;&#x7684;&#x4E5F;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5F53;&#x7136;&#x6211;&#x540C;&#x65F6;&#x4E5F;&#x6709;&#x516C;&#x7F51;IP&#xFF0C;&#x4F46;&#x662F;&#x5C40;&#x57DF;&#x7F51;&#x7684;&#x65B9;&#x5F0F;&#x8981;&#x66F4;&#x52A0;&#x5B89;&#x5168;&#x3002;</p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;NAS&#x4EE5;&#x53CA;&#x5176;&#x9644;&#x4EF6;&#x9009;&#x8D2D;&#x7684;&#x65F6;&#x5019;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x70B9;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x7684;&#x642D;&#x5EFA;&#x3002;&#x770B;&#x5B8C;&#x6587;&#x7AE0;&#x4F60;&#x5E94;&#x8BE5;&#x660E;&#x767D;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9700;&#x8981;NAS&#xFF0C;&#x9700;&#x8981;&#x4EC0;&#x4E48;&#x6837;&#x7684;NAS&#xFF0C;&#x9700;&#x8981;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x786C;&#x76D8;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6709;&#x9519;&#x6F0F;&#x4E4B;&#x5904;&#xFF0C;&#x6216;&#x8005;&#x65B0;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6B22;&#x8FCE;&#x8054;&#x7CFB;&#x6211;&#x3002;</p>
+<h2 id="&#x9644;&#x5F55;">&#x9644;&#x5F55;</h2>
+<h3 id="&#x4E00;&#x4E9B;-docker-compose-&#x914D;&#x7F6E;">&#x4E00;&#x4E9B; Docker Compose &#x914D;&#x7F6E;</h3>
+<h4 id="mongodb">MongoDB</h4>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token string">&quot;mongo:4&quot;</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">MONGO_INITDB_ROOT_USERNAME</span><span class="token punctuation">:</span> &lt;your own username<span class="token punctuation">&gt;</span>
+      <span class="token key atrule">MONGO_INITDB_ROOT_PASSWORD</span><span class="token punctuation">:</span> &lt;your own password<span class="token punctuation">&gt;</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">&quot;--wiredTigerCacheSizeGB 1.0 --auth&quot;</span> <span class="token comment"># Modify the memory by your hardware condition</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 27017<span class="token punctuation">:</span><span class="token number">27017</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token comment"># You should change your own path or use docker volume here</span>
+      <span class="token punctuation">-</span> /share/Container/data/mongo/db<span class="token punctuation">:</span>/data/db
+      <span class="token punctuation">-</span> /share/Container/data/mongo/configdb<span class="token punctuation">:</span>/data/configdb
+</code></pre>
+<h4 id="seaweedfs">SeaweedFS</h4>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">app</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token string">&quot;chrislusf/seaweedfs&quot;</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> server
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>dir=/data/data <span class="token comment"># Should create dir manually before start</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>s3
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>s3.config=/data/s3.json <span class="token comment"># Define user and authorization in this file</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>s3.port=8333
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>filer
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>filer.dirListLimit=50000
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>master.volumeSizeLimitMB=4000 <span class="token comment"># ~4GB per file</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>volume.max=1000 <span class="token comment"># 1000 * ~4GB = ~4TB in max</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">-</span>volume.index=leveldb <span class="token comment"># You can remove this line if you&apos;d like to put index data in memory</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8333<span class="token punctuation">:</span><span class="token number">8333</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token comment"># You should change your own path</span>
+      <span class="token punctuation">-</span> /share/Container/data/weedfs/<span class="token punctuation">:</span>/data
+</code></pre>
+<h4 id="node-exporter">Node Exporter</h4>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&apos;3&apos;</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">node_exporter</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> quay.io/prometheus/node<span class="token punctuation">-</span>exporter
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">pid</span><span class="token punctuation">:</span> <span class="token string">&quot;host&quot;</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;--path.rootfs=/host&quot;</span><span class="token punctuation">]</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;/:/host:ro,rslave&quot;</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;9100:9100&quot;</span>
+</code></pre>
+<div id="comment-wrapper" class="comment-wrapper clearfix">        <div class="comment-copyright">        <span class="title">Comments</span>        <span class="content">                Copyright &#xA9; luowei all right reserved, powered by                <a href="https://github.com/aleen42" target="_blank">aleen42</a>            </span>    </div>        <div class="modules"><div class="content-wrapper">    <div class="comment-list comment-wrapper f-dn">        <div class="empty-comments comment-item clearfix">Empty Comments</div>    </div>    <div class="editor-wrapper f-dn">        <div class="editor">        </div><!--        --><div>            <img class="user-avatar" src=".">            <i class="fa fa-sign-out" title="sign out" data-action="logout"></i>        </div>    </div>    <div class="auth-wrapper f-dn">        <div class="description">            <div class="title">Sign in <a href="https://github.com" target="_blank">GitHub</a></div>            <div class="content">                <p>As the plugin is integrated with a code management system like GitLab or GitHub, you may have to auth                    with your account before leaving comments around this article.</p>                <p>Notice: This plugin has used Cookie to store your token with an expiration.</p>            </div>        </div>        <div class="auth">            <button class="btn auth-btn">authorize</button>        </div>    </div></div></div>    <script type="text/javascript">        SYS_CONST = JSON.parse('{"redirect":"","clientId":"","repo":"luowei01/blogs","copyright":"Copyright © luowei","type":"github","host":"https://github.com","path":"other-tech/nas.md"}');    </script></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="innet.html" class="navigation navigation-prev " aria-label="Previous page: 科学的公司内网连接技术选型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="move2linux.html" class="navigation navigation-next " aria-label="Next page: 简易的Linux迁移指北">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"构建家用NAS过程中的碎碎念","level":"1.6.8","depth":2,"next":{"title":"简易的Linux迁移指北","level":"1.6.9","depth":2,"path":"other-tech/move2linux.md","ref":"other-tech/move2linux.md","articles":[]},"previous":{"title":"科学的公司内网连接技术选型","level":"1.6.7","depth":2,"path":"other-tech/innet.md","ref":"other-tech/innet.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","prism","-highlight","localized-footer","mermaid-gb3","ga","accordion","comments-footer"],"pluginsConfig":{"chapter-fold":{},"prism":{},"emphasize":{},"accordion":{},"search":{},"localized-footer":{"filename":"FOOTER.md","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"comments-footer":{"type":"github","repo":"luowei01/blogs","copyright":"Copyright © luowei"},"alerts":{},"ga":{"configuration":"auto","token":"UA-153583635-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"other-tech/nas.md","mtime":"2023-11-20T06:47:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-15T12:32:59.274Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comments-footer/comment.dist.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
