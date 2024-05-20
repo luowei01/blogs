@@ -64,4 +64,6 @@
     * [香草与香料](recipe/herb_and_spice.md)
     * [皮塔饼](recipe/pita.md)
     * [韭菜鸡蛋饼](recipe/garlic-chives-omelette.md)
+* [CSDN博客](csdn/README.md)
+    * [深度学习环境配置](csdn/2024-5-9-Configure_deep_learning_environment.md)
 
