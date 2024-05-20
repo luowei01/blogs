@@ -1,12 +1,4 @@
-<!--
- * @Author       : luoweiWHUT 1615108374@qq.com
- * @Date         : 2024-05-20 17:47:28
- * @LastEditors  : luoweiWHUT 1615108374@qq.com
- * @LastEditTime : 2024-05-20 17:47:34
- * @FilePath     : \blogs\docs\csdn\2024-5-9-Configure_deep_learning_environment.md
- * @Description  : 
- * Copyright (c) 2024 by luoweiWHUT email: 1615108374@qq.com, All Rights Reserved.
--->
+<!-- toc -->
 ---
 layout: post
 title: "深度学习环境入门"
