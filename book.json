@@ -15,7 +15,6 @@
     "mermaid-gb3",
     "ga",
     "accordion",
-    "comments-footer",
     "theme-default",
     "mygitalk",
     "atoc",
@@ -37,11 +36,6 @@
     },
     "ga": {
       "token": "UA-153583635-2"
-    },
-    "comments-footer": {
-        "type": "github",
-        "repo": "luowei01/blogs",
-        "copyright": "Copyright © luowei"
     },
     "mygitalk": {
       "clientID": "Ov23liXJ47TD4diLy6Z5",
