@@ -1,0 +1,7 @@
+.bookignore
+.gitignore
+package-lock.json
+node_modules/
+LICENSE
+*.bat
+.vscode/

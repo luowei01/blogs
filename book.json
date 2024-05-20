@@ -1,4 +1,8 @@
 {
+  "cover": "blog.png",
+  "title": "听风雨的博客",
+  "author": "luowei", 
+  "description": "记录生活和学习的点滴",
   "plugins": [
     "hide-element",
     "chapter-fold",
@@ -11,7 +15,18 @@
     "mermaid-gb3",
     "ga",
     "accordion",
-    "comments-footer"
+    "comments-footer",
+    "theme-default",
+    "mygitalk",
+    "atoc",
+    "splitter",
+    "back-to-top-button",
+    "chapter-fold",
+    "code",
+    "insert-logo",
+    "tbfed-pagefooter",
+    "change_girls",
+    "auto-scroll-table"
   ],
   "pluginsConfig": {
     "hide-element": {
@@ -26,6 +41,39 @@
         "type": "github",
         "repo": "luowei01/blogs",
         "copyright": "Copyright © luowei"
+    },
+    "mygitalk": {
+      "clientID": "Ov23liBSx6prTneSyci2",
+      "clientSecret": "62bd6e055b9b0ec67adf218b5207348eaca8ecb7",
+      "repo": "luowei01/blogs",
+      "owner": "luowei01",
+      "admin": [
+        "luowei01"
+      ],
+      "distractionFreeMode": false
+    },
+    "atoc": {
+      "addClass": true,
+      "className": "atoc"
+    },
+    "code": {
+      "copyButtons": true
+    },
+    "insert-logo": {
+      "url": "blog.png",
+      "style": "background: none; max-height: 64px; min-height: 64px"
+    },
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy luowei01 2024",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "change_girls": {
+      "time": 10,
+      "urls": [
+        "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg",
+        "https://images.pexels.com/photos/311039/pexels-photo-311039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
     }
   }
 }
