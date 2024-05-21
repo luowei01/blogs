@@ -1,5 +1,6 @@
 .bookignore
 .gitignore
+gitalk-config.js
 package-lock.json
 node_modules/
 LICENSE
