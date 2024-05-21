@@ -1,0 +1,1 @@
+temp_index_replace.js替换插件node_modules\gitbook-plugin-tbfed-pagefooter的index.js，修复mygitalk不能正常显示的问题。
