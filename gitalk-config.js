@@ -1,3 +1,4 @@
+// 因为mygitalk失效，这里手动配置该插件，选用tbfed-pagefooter作载体
 // str += '\n\n<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">' +
 //     '\n\n<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>' +
 //     '\n\n<div id="gitalk-container"></div>' +

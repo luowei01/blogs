@@ -16,7 +16,6 @@
     "ga",
     "accordion",
     "theme-default",
-    "mygitalk",
     "atoc",
     "splitter",
     "back-to-top-button",
@@ -36,14 +35,6 @@
     },
     "ga": {
       "token": "UA-153583635-2"
-    },
-    "mygitalk": {
-      "clientID": "Ov23liXJ47TD4diLy6Z5",
-      "clientSecret": "00f665c53d4f4f4ef1a0c8b86a918636233b54c5",
-      "repo": "blogs",
-      "owner": "luowei01",
-      "admin": ["luowei01"],
-      "distractionFreeMode": false
     },
     "atoc": {
       "addClass": true,
