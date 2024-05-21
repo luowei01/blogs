@@ -42,9 +42,7 @@
       "clientSecret": "00f665c53d4f4f4ef1a0c8b86a918636233b54c5",
       "repo": "blogs",
       "owner": "luowei01",
-      "admin": [
-        "luowei01"
-      ],
+      "admin": ["luowei01"],
       "distractionFreeMode": false
     },
     "atoc": {
