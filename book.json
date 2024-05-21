@@ -9,7 +9,7 @@
   "plugins": [
     "hide-element",
     "chapter-fold",
-    "katex",
+    "mathjax-pro",
     "alerts",
     "emphasize",
     "prism",
@@ -71,6 +71,10 @@
         "https://images.pexels.com/photos/311039/pexels-photo-311039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     },
-    "favicon": "./favicon.ico"
+    "favicon": "./favicon.ico",
+    "mathjax-pro":{
+            "forceSVG": false,
+            "version":"2.7.6"
+    }
   }
 }
