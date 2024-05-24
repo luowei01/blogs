@@ -10,7 +10,7 @@ module.exports = {
     'page:before': function(page) {
       var _label = 'File Modify: ',
           _format = 'YYYY-MM-DD HH:mm:ss',
-        _copy = 'powered by <a href="https://luowei01.github.io/blog/" target="_blank">luowei</a>'
+        _copy = 'powered by <a href="https://chateda.top/" target="_blank">luowei</a>'
       if(this.options.pluginsConfig['tbfed-pagefooter']) {
         _label = this.options.pluginsConfig['tbfed-pagefooter']['modify_label'] || _label;
         _format = this.options.pluginsConfig['tbfed-pagefooter']['modify_format'] || _format;
@@ -27,7 +27,7 @@ module.exports = {
       str += '\n\n<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">' +
           '\n\n<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>' +
           '\n\n<div id="gitalk-container"></div>' +
-          '\n\n<script src="https://luowei01.github.io/blogs/gitalk-config.js"></script>';
+          '\n\n<script src="https://blog.chateda.top/gitalk-config.js"></script>';
       page.content = page.content + str;
       return page;
     }
