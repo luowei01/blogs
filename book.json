@@ -72,6 +72,30 @@
       ]
     },
     "favicon": "./favicon.ico",
+    "mathjax": {
+      "tex": {
+        "inlineMath": [
+          ["$", "$"],
+          ["\\(", "\\)"]
+        ],
+        "displayMath": [
+          ["$$", "$$"],
+          ["\\[", "\\]"]
+        ],
+        "processEscapes": true,
+        "processEnvironments": true
+      },
+      "options": {
+        "skipHtmlTags": ["script", "noscript", "style", "textarea", "code"],
+        "ignoreClass": "tex2jax_ignore",
+        "displayAlign": "center",
+        "displayIndent": "2em",
+        "showMathMenu": true,
+        "menuSettings": {
+          "zoom": "Zoom"
+        }
+      }
+    },
     "mathjax-pro":{
             "forceSVG": false,
             "version":"2.7.6"
