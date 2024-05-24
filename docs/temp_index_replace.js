@@ -24,6 +24,10 @@ module.exports = {
         _label +
         '\n{{file.mtime | date("' + _format +
         '")}}\n</span></footer>'
+      str += '\n\n<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">' +
+          '\n\n<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>' +
+          '\n\n<div id="gitalk-container"></div>' +
+          '\n\n<script src="https://blog.chateda.top/gitalk-config.js"></script>';
       page.content = page.content + str;
       return page;
     }
