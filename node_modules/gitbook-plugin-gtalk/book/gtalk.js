@@ -1,6 +1,9 @@
-module.exports = function(book, page) {
+const crypto = require('crypto');
+module.exports = function (book, page) {
+  const path = page.path;
+  const id = crypto.createHash('md5').update(path).digest('hex');
   var cfg = book.config.get('pluginsConfig')['gtalk'];
-  cfg.id = '/' + page.path.slice(0, page.path.length-2) + 'html';
+  cfg.id = id;
 
   var DOM = '\n\n'
     + '<div id="gitalk-container"></div>'
