@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<style>
+    .navbar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        /* 确保导航栏位于其他内容上方 */
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        background-color: #f0f0f0;
+        font-size: 18px;
+        /* 放大字号 */
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .current {
+        font-weight: bold;
+        color: #ff0000;
+        /* 高亮颜色 */
+    }
+</style>
+
+<div class="navbar">
+    <a href="https://www.chateda.top/">首页</a>
+    <a href="https://www.chateda.top/about/">关于</a>
+    <a href="https://www.chateda.top/archive/">归档</a>
+    <a href="https://www.chateda.top/tags/">标签</a>
+    <a href="https://blog.chateda.top/" class="current">全部博客</a>
+</div>
+<style>
+    /* 空白占位元素 */
+    .navbar-placeholder {
+        height: 40px;
+        /* 与导航栏高度相同 */
+    }
+</style>
+<div class="navbar-placeholder"></div>
+<html lang="{{ config.language }}" {% if page.dir=="rtl" %}dir="rtl" {% endif %}>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>{% block title %}{{ config.title|d("GitBook", true) }}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="generator" content="GitBook {{ gitbook.version }}">
+    {% if config.author %}
+    <meta name="author" content="{{ config.author }}">{% endif %}
+    {% if config.isbn %}
+    <meta name="identifier" content="{{ config.isbn }}" scheme="ISBN">{% endif %}
+    {% block style %}
+    {% for resource in plugins.resources.css %}
+    {% if resource.url %}
+    <link rel="stylesheet" href="{{ resource.url }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ resource.path|resolveAsset }}">
+    {% endif %}
+    {% endfor %}
+    {% endblock %}
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+    {% block javascript %}{% endblock %}
+</body>
+
+</html>
