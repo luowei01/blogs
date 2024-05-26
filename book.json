@@ -4,7 +4,7 @@
   "author": "luowei", 
   "description": "记录生活和学习的点滴",
   "styles": {
-    "website": "styles.css"
+    "website": "style.html"
   },
   "plugins": [
     "hide-element",
