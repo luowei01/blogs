@@ -11,8 +11,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px; /* 根据需要调整宽度 */
-  max-height: 800px; /* 根据需要调整高度 */
+  width: 100%; /* 将宽度设置为100%，以适应父元素的宽度 */
+  height: 800px; /* 根据需要调整高度 */
 }
 </style>
 
