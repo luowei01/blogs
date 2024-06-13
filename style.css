@@ -1,0 +1,11 @@
+.indent {
+    text-indent: 2em;
+    /* 设置首行缩进为2个字符宽度 */
+}
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: auto;
+}
