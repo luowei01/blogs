@@ -85,10 +85,11 @@ n量子位的运算操作可以表示为一个$2^n \times 2^n $ 维的酉矩阵�
     <img src="image-11.png" alt="图片1" style="width: 45%;" >
     <img src="image-12.png" alt="图片2" style="width: 45%;">
 </div>
-<table style="width: 100%;">
+
+<table style="width: 100%;border: none;">
   <tr>
-    <td style="text-align: left;">真值表</td>
-    <td style="text-align: right;">二叉决策图Binary Decision Diagram <br>(实边表示取值为1，虚边表示取值为0)</td>
+    <td style="text-align: left; border: none;">真值表</td>
+    <td style="text-align: right;border: none;">二叉决策图Binary Decision Diagram <br>(实边表示取值为1，虚边表示取值为0)</td>
   </tr>
 </table>
 
@@ -98,3 +99,4 @@ A_star算法,略
 Boolean satisfiability (SAT) solvers，略
 # Part-II Quantum-Circuit Simulation
 # 4 Overview
+/点击的

@@ -12,5 +12,5 @@
     * [逼近论](数值分析/逼近论.md)
     * [手写笔记](数值分析/note.md)
 * [量子EDA](量子EDA/README.md)
-    * [量子计算设计自动化](量子EDA/Introducing%20Design%20Automation%20for%20Quantum%20Computing.md)
+    * [量子计算设计自动化](量子EDA/Introducing Design Automation for Quantum Computing.md)
 
