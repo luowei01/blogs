@@ -99,5 +99,16 @@ A_star算法,略
 ## 3.3 Efficient Reasoning Engines
 Boolean satisfiability (SAT) solvers，略
 # Part-II Quantum-Circuit Simulation
+本质是大规模矩阵乘法，需要大量内存，转换为决策图(DD)去优化解决。
 # 4 Overview
-/点击的
+# Part-III Design of Boolean Components for Quantum Circuits
+本质是实现布尔函数，可逆电路的逻辑综合方法,也可基于决策图去优化。复杂性指数级。
+<img src="image-14.png" class="image" >
+
+# Part-IV Mapping Quantum Circuits to NISQ Devices
+<p class="indent"> 量子电路的映射是将量子电路的逻辑门映射到目标硬件或某个门库中可用的基本操作的过程。量子电路的映射过程通常涉及两个步骤：
+
+- 量子电路的逻辑门分解：将量子电路的门分解为目标硬件或某个门库中可用的基本操作。
+- 量子位映射：将量子电路的逻辑量子位映射到量子计算机的物理量子位。
+
+<p class="indent">量子位映射是一项艰巨的任务，因为目标架构给出的连接限制禁止某些量子位对之间的交互。这通常可以通过插入进一步动态更改量子位映射的操作来解决，从而产生 NP 完全任务。这会引入一些辅助比特位和swap门，以便在量子电路的逻辑量子位与物理量子位之间建立映射。评价指标是电路的深度和使用的比特数量。
