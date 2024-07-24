@@ -1,0 +1,865 @@
+
+<!DOCTYPE HTML>
+<style>
+    .navbar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        /* 确保导航栏位于其他内容上方 */
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        background-color: #f0f0f0;
+        font-size: 18px;
+        /* 放大字号 */
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .current {
+        font-weight: bold;
+        color: #ff0000;
+        /* 高亮颜色 */
+    }
+</style>
+
+<div class="navbar">
+    <a href="https://www.chateda.top/">首页</a>
+    <a href="https://www.chateda.top/about/" >关于</a>
+    <a href="https://www.chateda.top/archive/">归档</a>
+    <a href="https://www.chateda.top/tags/">标签</a>
+    <a href="https://blog.chateda.top/" class="current">全部博客</a>
+</div>
+<style>
+    /* 空白占位元素 */
+    .navbar-placeholder {
+        height: 40px;
+        /* 与导航栏高度相同 */
+    }
+</style>
+<div class="navbar-placeholder"></div>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>实验二：文本情感分类 · 听风雨的博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="luowei">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-gtalk/gtalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../比赛相关/" />
+    
+    
+    <link rel="prev" href="实验一：手写数字识别.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    深度学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="0.Configure_deep_learning_environment.html">
+            
+                <a href="0.Configure_deep_learning_environment.html">
+            
+                    
+                    0.环境配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.torch.tensor的初始化和基本操作.html">
+            
+                <a href="1.torch.tensor的初始化和基本操作.html">
+            
+                    
+                    1.torch.tensor的初始化和基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="2.pytorch自动微分-autograd.html">
+            
+                <a href="2.pytorch自动微分-autograd.html">
+            
+                    
+                    2.pytorch自动微分-autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="2.梯度求导和反向传播（require_grad = True和False时tensor的区别）.html">
+            
+                <a href="2.梯度求导和反向传播（require_grad = True和False时tensor的区别）.html">
+            
+                    
+                    2.pytorch神经网络模块-nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="2.实验：手动实现线性回归.html">
+            
+                <a href="2.实验：手动实现线性回归.html">
+            
+                    
+                    2.实验：手动实现线性回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="3.pytorch.nn神经网络的简易构建.html">
+            
+                <a href="3.pytorch.nn神经网络的简易构建.html">
+            
+                    
+                    3.pytorch.nn神经网络的简易构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="4.torch数据集类、加载、自带数据集、transform处理图像数据.html">
+            
+                <a href="4.torch数据集类、加载、自带数据集、transform处理图像数据.html">
+            
+                    
+                    4.torch数据集类、加载、自带数据集、transform处理图像数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="5.数据并行处理.html">
+            
+                <a href="5.数据并行处理.html">
+            
+                    
+                    5.数据并行处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="实验一：手写数字识别.html">
+            
+                <a href="实验一：手写数字识别.html">
+            
+                    
+                    实验一：手写数字识别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="实验二：文本情感分类.html">
+            
+                <a href="实验二：文本情感分类.html">
+            
+                    
+                    实验二：文本情感分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../比赛相关/">
+            
+                <a href="../比赛相关/">
+            
+                    
+                    比赛相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../比赛相关/第五届EDA精英挑战赛赛题八-标准单元电路的版图自动生成.html">
+            
+                <a href="../比赛相关/第五届EDA精英挑战赛赛题八-标准单元电路的版图自动生成.html">
+            
+                    
+                    标准单元电路的版图自动生成（第五届EDA精英挑战赛赛题八)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../数值分析/">
+            
+                <a href="../数值分析/">
+            
+                    
+                    数值分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../数值分析/引论.html">
+            
+                <a href="../数值分析/引论.html">
+            
+                    
+                    引论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../数值分析/插值法.html">
+            
+                <a href="../数值分析/插值法.html">
+            
+                    
+                    插值法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../数值分析/最小二乘.html">
+            
+                <a href="../数值分析/最小二乘.html">
+            
+                    
+                    最小二乘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../数值分析/逼近论.html">
+            
+                <a href="../数值分析/逼近论.html">
+            
+                    
+                    逼近论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../数值分析/note.html">
+            
+                <a href="../数值分析/note.html">
+            
+                    
+                    手写笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../量子EDA/">
+            
+                <a href="../量子EDA/">
+            
+                    
+                    量子EDA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../量子EDA/Introducing Design Automation for Quantum Computing.html">
+            
+                <a href="../量子EDA/Introducing Design Automation for Quantum Computing.html">
+            
+                    
+                    量子计算设计自动化综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../量子EDA/Quantum Fourier Transform.html">
+            
+                <a href="../量子EDA/Quantum Fourier Transform.html">
+            
+                    
+                    量子傅里叶变换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >实验二：文本情感分类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <pre class="language-"><code class="lang-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader<span class="token punctuation">,</span>Dataset
+<span class="token keyword">from</span> tqdm <span class="token keyword">import</span> tqdm 
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> pickle
+<span class="token keyword">import</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">as</span> nn
+<span class="token keyword">import</span> time
+</code></pre>
+<pre class="language-"><code>D:\English\anaconda3\envs\test\lib\site-packages\tqdm\auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</code></pre><pre class="language-"><code class="lang-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;&#x6570;&#x636E;&#x96C6;&#x642D;&#x5EFA;&quot;&quot;&quot;</span>
+<span class="token keyword">def</span> <span class="token function">tokenize</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    content <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">&quot;&lt;.*?&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span>
+    filters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;:&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;\.&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;\t&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;\n&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;\x93&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;\x97&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;\x96&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;#&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;$&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;%&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&amp;&apos;</span><span class="token punctuation">]</span>
+    content <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">&quot;|&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>filters<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">,</span> content<span class="token punctuation">)</span>
+    tokens <span class="token operator">=</span> <span class="token punctuation">[</span>i<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> content<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> tokens
+<span class="token keyword">class</span> <span class="token class-name">word_to_sequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#&#x6587;&#x672C;&#x5E8F;&#x5217;&#x5316;</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&quot;UNK&quot;</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;PAD&quot;</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token comment">#&#x964C;&#x751F;&#x8BCD;&#xFF0C;&#x586B;&#x5145;&#x8BCD;</span>
+        self<span class="token punctuation">.</span>count<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>sentence<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#&#x7EDF;&#x8BA1;&#x8BCD;&#x8BED;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x6570;</span>
+        <span class="token keyword">for</span> word <span class="token keyword">in</span> sentence<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>count<span class="token punctuation">[</span>word<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>count<span class="token punctuation">.</span>get<span class="token punctuation">(</span>word<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">def</span> <span class="token function">build_vocab</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#&#x751F;&#x4EA7;&#x8BCD;&#x5178;</span>
+        self<span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token punctuation">{</span>word<span class="token punctuation">:</span>value <span class="token keyword">for</span> word<span class="token punctuation">,</span>value <span class="token keyword">in</span> self<span class="token punctuation">.</span>count<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token number">5</span><span class="token operator">&lt;</span>value<span class="token operator">&lt;</span><span class="token number">200</span><span class="token punctuation">}</span>
+<span class="token comment">#         temp = sorted(self.count.items(),key=lamba x:x[-1])[0:10000]</span>
+<span class="token comment">#         self.count = dict(temp)</span>
+        <span class="token keyword">for</span> word <span class="token keyword">in</span> self<span class="token punctuation">.</span>count<span class="token punctuation">:</span><span class="token comment">#&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5B57;&#x5178;</span>
+            self<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">[</span>word<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>inverse_dict <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>self<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5B57;&#x5178;</span>
+
+    <span class="token keyword">def</span> <span class="token function">transform</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>sentence<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#&#x53E5;&#x5B50;&#x8F6C;&#x5E8F;&#x5217;</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">:</span>
+            sentence <span class="token operator">=</span> sentence<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">:</span>
+            sentence<span class="token operator">+=</span><span class="token punctuation">[</span><span class="token string">&quot;PAD&quot;</span> <span class="token punctuation">]</span><span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">100</span><span class="token operator">-</span><span class="token builtin">len</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span>word<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">for</span> word <span class="token keyword">in</span> sentence <span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">inverse_transform</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>indices<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>inverse_dict<span class="token punctuation">.</span>get<span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token keyword">for</span> word <span class="token keyword">in</span> indices<span class="token punctuation">]</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;&#x751F;&#x6210;&#x8BCD;&#x5178;&#x5E76;&#x4FDD;&#x5B58;&quot;&quot;&quot;</span>
+ws <span class="token operator">=</span> word_to_sequence<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> tqdm<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/neg/&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/neg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>\
+                <span class="token operator">+</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/pos/&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/pos&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    
+        ws<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>tokenize<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">,</span>errors<span class="token operator">=</span><span class="token string">&apos;ignore&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+ws<span class="token punctuation">.</span>build_vocab<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>ws<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>ws<span class="token punctuation">,</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;runs/model/ws.pkl&quot;</span><span class="token punctuation">,</span><span class="token string">&apos;wb&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code>100%|&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;| 25000/25000 [00:09&lt;00:00, 2766.20it/s]
+
+32645
+</code></pre><pre class="language-"><code class="lang-python"><span class="token keyword">class</span> <span class="token class-name">my_dataset</span><span class="token punctuation">(</span>Dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>my_dataset<span class="token punctuation">,</span>self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span>  train<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>total_file_path_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/neg/&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/neg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>\
+                <span class="token operator">+</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/pos/&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/train/pos&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>total_file_path_list <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/test/neg/&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/test/neg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>\
+                <span class="token operator">+</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/test/pos/&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">&quot;DataSet/aclImdb/test/pos&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cut_path <span class="token operator">=</span> self<span class="token punctuation">.</span>total_file_path_list<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+        cut_filename <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>cut_path<span class="token punctuation">)</span>
+        text<span class="token operator">=</span>tokenize<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span>cut_path<span class="token punctuation">,</span>errors<span class="token operator">=</span><span class="token string">&apos;ignore&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+        text <span class="token operator">=</span> ws<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+        text <span class="token operator">=</span> torch<span class="token punctuation">.</span>LongTensor<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+        label<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>cut_filename<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+        <span class="token keyword">return</span> label<span class="token punctuation">,</span>text
+    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>total_file_path_list<span class="token punctuation">)</span>
+test_data <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>dataset<span class="token operator">=</span>my_dataset<span class="token punctuation">(</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">,</span>batch_size<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span>num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>pin_memory<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+train_data <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>dataset<span class="token operator">=</span>my_dataset<span class="token punctuation">(</span>train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">,</span>batch_size<span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">,</span>num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>pin_memory<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code class="lang-python">ws <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;runs/model/ws.pkl&quot;</span><span class="token punctuation">,</span><span class="token string">&apos;rb&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;&#x6784;&#x5EFA;&#x6A21;&#x578B;&quot;&quot;&quot;</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;
+    LSTM&#x5C42;&#x7528;&#x6CD5;
+    &#x8F93;&#x5165;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF1A;
+    input(seq_len, batch, input_size)
+    h0(num_layers * num_directions, batch, hidden_size)&#x663E;&#x7136;&#x7B49;&#x4E8E;LSTM&#x5355;&#x5143;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x5C42;&#x6570;&#x548C;&#x662F;&#x5426;&#x53CC;&#x5411;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;LSTM&#x5355;&#x5143;&#x6570;&#x91CF;&#x7FFB;&#x500D;
+    c0(num_layers * num_directions, batch, hidden_size)
+
+    &#x8F93;&#x51FA;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF1A;
+    output(seq_len, batch, hidden_size * num_directions)
+    hn(num_layers * num_directions, batch, hidden_size)
+    cn(num_layers * num_directions, batch, hidden_size)
+ &quot;&quot;&quot;</span>
+<span class="token keyword">class</span> <span class="token class-name">my_net</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>my_net<span class="token punctuation">,</span>self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>embedding <span class="token operator">=</span> nn<span class="token punctuation">.</span>Embedding<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>ws<span class="token punctuation">.</span><span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span>padding_idx<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>lstm <span class="token operator">=</span> nn<span class="token punctuation">.</span>LSTM<span class="token punctuation">(</span>input_size<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">,</span>hidden_size<span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">,</span>num_layers<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>batch_first<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>bidirectional <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">,</span>dropout<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token comment">#200-&#x4E00;&#x4E2A;&#x8BCD;&#x7684;&#x5411;&#x91CF;&#x957F;&#x5EA6;&#xFF0C;\</span>
+        <span class="token comment">#64-&#x9690;&#x85CF;&#x5C42;&#x6BCF;&#x4E00;&#x5C42;LSTM&#x5355;&#x5143;&#x7684;&#x6570;&#x91CF;,2&#x4E3A;&#x5C42;&#x6570;&#xFF0C;bidirectional&#x662F;&#x5426;&#x4E3A;&#x53CC;&#x5411;&#x7684;LSTM</span>
+        self<span class="token punctuation">.</span>lstm1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>LSTM<span class="token punctuation">(</span>input_size<span class="token operator">=</span><span class="token number">128</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span>hidden_size<span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">,</span>num_layers<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>batch_first<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>bidirectional <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>fc1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token comment">#(128*2,64)if bidirectional else (128*1,64)</span>
+<span class="token comment">#         self.batch_norm = nn.BatchNorm1d(64)#&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x540E;&#x4F7F;&#x7528;&#xFF0C;&#x5BF9;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x89C4;&#x8303;&#x5316;&#x5904;&#x7406;&#xFF0C;&#x52A0;&#x5FEB;&#x8BAD;&#x7EC3;&#x901F;&#x5EA6;&#xFF0C;&#x7F13;&#x89E3;&#x68AF;&#x5EA6;&#x6D88;&#x5931;&#x6216;&#x68AF;&#x5EA6;&#x7206;&#x70B8;</span>
+<span class="token comment">#         self.fc2 = nn.Linear(64,10)</span>
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token comment">#         print(x.size())</span>
+        x <span class="token operator">=</span> self<span class="token punctuation">.</span>embedding<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token comment">#batchsize*100*200</span>
+        x<span class="token punctuation">,</span><span class="token punctuation">(</span>h_n<span class="token punctuation">,</span>c_n<span class="token punctuation">)</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>lstm<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token comment">#         output_fw,output_bw=h_n[-2,:,:],h_n[-1,:,:]#&#x53CC;&#x5411;&#x8F93;&#x51FA;&#x5C06;&#x7ED3;&#x679C;&#x62FC;&#x63A5;</span>
+<span class="token comment">#         output = torch.cat([output_fw,output_bw],-1)</span>
+<span class="token comment">#         print(output.size())128*256</span>
+        x<span class="token punctuation">,</span><span class="token punctuation">(</span>h_n<span class="token punctuation">,</span>c_n<span class="token punctuation">)</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>lstm1<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        out_put <span class="token operator">=</span> h_n<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token comment">#&#x5355;&#x5411;&#x8F93;&#x51FA;&#x5C06;&#x7B2C;0&#x7EF4;&#x6324;&#x538B;&#x6389;</span>
+        <span class="token comment">#out_put&#xFF1A;bitch_size * hidden_size *  2&#x6216;1</span>
+<span class="token comment">#         print(out_put.size())</span>
+        x <span class="token operator">=</span> self<span class="token punctuation">.</span>fc1<span class="token punctuation">(</span>out_put<span class="token punctuation">)</span>
+<span class="token comment">#         x = nn.functional.relu(x)</span>
+<span class="token comment">#         x = self.batch_norm(x)</span>
+<span class="token comment">#         x = self.fc2(x)</span>
+        <span class="token keyword">return</span> x
+model <span class="token operator">=</span> my_net<span class="token punctuation">(</span><span class="token punctuation">)</span>
+loss_function <span class="token operator">=</span> nn<span class="token punctuation">.</span>CrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+optimizer <span class="token operator">=</span> torch<span class="token punctuation">.</span>optim<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>lr<span class="token operator">=</span><span class="token number">0.001</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;&#x8BAD;&#x7EC3;&quot;&quot;&quot;</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;&#x6A21;&#x578B;&#x7684;&#x52A0;&#x8F7D;&quot;&quot;&quot;</span>
+<span class="token comment"># if os.path.exists(&quot;runs/model/aclImdb_net.pt&quot;):</span>
+<span class="token comment">#     model.load_state_dict(torch.load(&quot;runs/model/aclImdb_net.pt&quot;))</span>
+<span class="token comment">#     optimizer.load_state_dict(torch.load(&quot;runs/model/aclImdb_optimizer.pt&quot;))</span>
+start <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">&quot;cuda:0&quot;</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>train<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>text<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>train_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        text <span class="token operator">=</span> text<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+        pred <span class="token operator">=</span> model<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+        target<span class="token operator">=</span>target<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+        loss <span class="token operator">=</span> loss_function<span class="token punctuation">(</span>pred<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+        loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> i<span class="token operator">%</span><span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>epoch<span class="token punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token punctuation">{</span>loss<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;&#x6A21;&#x578B;&#x7684;&#x4FDD;&#x5B58;&quot;&quot;&quot;</span>
+os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span><span class="token string">&quot;runs/model&quot;</span><span class="token punctuation">,</span> exist_ok<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>model<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">&quot;runs/model/aclImdb_net.pt&quot;</span><span class="token punctuation">)</span><span class="token comment">#&#x4FDD;&#x5B58;&#x6A21;&#x578B;&#x53C2;&#x6570;</span>
+torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>optimizer<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">&quot;runs/model/aclImdb_optimizer.pt&quot;</span><span class="token punctuation">)</span><span class="token comment">#&#x4FDD;&#x5B58;&#x4F18;&#x5316;&#x5668;&#x53C2;&#x6570;</span>
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;&#x8BC4;&#x4F30;&quot;&quot;&quot;</span>
+model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+loss <span class="token operator">=</span> <span class="token number">0</span>
+correct1<span class="token punctuation">,</span>correct2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>target<span class="token punctuation">,</span>text<span class="token punctuation">)</span> <span class="token keyword">in</span> test_data<span class="token punctuation">:</span>
+    target<span class="token punctuation">,</span>text <span class="token operator">=</span> target<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span><span class="token punctuation">,</span>text<span class="token punctuation">.</span>to<span class="token punctuation">(</span>device<span class="token punctuation">)</span>
+    <span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        out <span class="token operator">=</span> model<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+        loss<span class="token operator">+=</span> nn<span class="token punctuation">.</span>functional<span class="token punctuation">.</span>nll_loss<span class="token punctuation">(</span>out<span class="token punctuation">,</span>target<span class="token punctuation">,</span>reduction<span class="token operator">=</span><span class="token string">&quot;sum&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        pred <span class="token operator">=</span> out<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>keepdim<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        correct1<span class="token operator">+=</span><span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token punctuation">.</span>eq<span class="token punctuation">(</span>target<span class="token punctuation">.</span>data<span class="token punctuation">.</span>view_as<span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        correct2<span class="token operator">+=</span><span class="token punctuation">(</span>pred<span class="token operator">&gt;=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>eq<span class="token punctuation">(</span>target<span class="token punctuation">.</span>data<span class="token punctuation">.</span>view_as<span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>loss<span class="token operator">/</span><span class="token builtin">len</span><span class="token punctuation">(</span>test_data<span class="token punctuation">.</span>dataset<span class="token punctuation">)</span><span class="token punctuation">,</span>correct1<span class="token operator">/</span><span class="token builtin">len</span><span class="token punctuation">(</span>test_data<span class="token punctuation">.</span>dataset<span class="token punctuation">)</span><span class="token punctuation">,</span>correct2<span class="token operator">/</span><span class="token builtin">len</span><span class="token punctuation">(</span>test_data<span class="token punctuation">.</span>dataset<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code>-0.9243730639648438 0.22288 0.64636
+</code></pre><pre class="language-"><code class="lang-python">
+
+</code></pre>
+<p><div id="gitalk-container"></div><script src="//cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script><script>window.onload = function() {gitbook.events.on("page.change", function() {var gitalk = new Gitalk({"clientID":"Ov23liXJ47TD4diLy6Z5","clientSecret":"00f665c53d4f4f4ef1a0c8b86a918636233b54c5","repo":"blogs","owner":"luowei01","admin":["luowei01"],"distractionFreeMode":false,"id":"400ea0993f4f86f4944b8cb8c5e55272"});gitalk.render("gitalk-container");});};var gitalk = new Gitalk({"clientID":"Ov23liXJ47TD4diLy6Z5","clientSecret":"00f665c53d4f4f4ef1a0c8b86a918636233b54c5","repo":"blogs","owner":"luowei01","admin":["luowei01"],"distractionFreeMode":false,"id":"400ea0993f4f86f4944b8cb8c5e55272"});gitalk.render("gitalk-container");</script></p>
+<script type="text/javascript">var className='atoc';</script>
+
+<footer class="page-footer"><b>&#x200B;&#x7248;&#x6743;&#x58F0;&#x660E;</b>:<span style="color:red;">&#x672C;&#x6587;&#x4E3A;&#x535A;&#x4E3B;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x672A;&#x7ECF;&#x535A;&#x4E3B;&#x5141;&#x8BB8;&#x4E0D;&#x5F97;&#x8F6C;&#x8F7D;&#x3001;&#x6458;&#x7F16;&#x3001;&#x590D;&#x5236;&#x53CA;&#x5EFA;&#x7ACB;&#x955C;&#x50CF;&#xFF0C;&#x5982;&#x6709;&#x7248;&#x6743;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x535A;&#x4E3B;! </span><br><span class="copyright">Copyright &#xA9; luowei01 2024 all right reserved,powered by <a href="https://chateda.top/" target="_blank">luowei</a></span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2024-07-24 10:53:43
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="实验一：手写数字识别.html" class="navigation navigation-prev " aria-label="Previous page: 实验一：手写数字识别">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../比赛相关/" class="navigation navigation-next " aria-label="Next page: 比赛相关">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"实验二：文本情感分类","level":"1.2.10","depth":2,"next":{"title":"比赛相关","level":"1.3","depth":1,"path":"比赛相关/README.md","ref":"比赛相关/README.md","articles":[{"title":"标准单元电路的版图自动生成（第五届EDA精英挑战赛赛题八)","level":"1.3.1","depth":2,"path":"比赛相关/第五届EDA精英挑战赛赛题八-标准单元电路的版图自动生成.md","ref":"比赛相关/第五届EDA精英挑战赛赛题八-标准单元电路的版图自动生成.md","articles":[]}]},"previous":{"title":"实验一：手写数字识别","level":"1.2.9","depth":2,"path":"深度学习/实验一：手写数字识别.md","ref":"深度学习/实验一：手写数字识别.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-element","chapter-fold","mathjax-pro","alerts","emphasize","prism","-highlight","localized-footer","mermaid-gb3","ga","accordion","theme-default","gtalk","atoc","splitter","back-to-top-button","chapter-fold","code","insert-logo","tbfed-pagefooter","change_girls","auto-scroll-table","custom-favicon"],"styles":{"website":"style.html"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy luowei01 2024","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{},"emphasize":{},"atoc":{"addClass":true,"className":"atoc"},"splitter":{},"change_girls":{"time":10,"urls":["https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg","https://images.pexels.com/photos/311039/pexels-photo-311039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"]},"accordion":{},"search":{},"auto-scroll-table":{},"localized-footer":{"filename":"FOOTER.md","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"gtalk":{"clientID":"Ov23liXJ47TD4diLy6Z5","clientSecret":"00f665c53d4f4f4ef1a0c8b86a918636233b54c5","repo":"blogs","owner":"luowei01","admin":["luowei01"],"distractionFreeMode":false},"mermaid-gb3":{},"favicon":"./favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.6"},"mathjax":{"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]],"processEscapes":true,"processEnvironments":true},"options":{"skipHtmlTags":["script","noscript","style","textarea","code"],"ignoreClass":"tex2jax_ignore","displayAlign":"center","displayIndent":"2em","showMathMenu":true,"menuSettings":{"zoom":"Zoom"}}},"ga":{"configuration":"auto","token":"UA-153583635-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 64px; min-height: 64px","url":"https://cdn.jsdelivr.net/gh/luowei01/images/images/blog_64.png"}},"theme":"default","author":"luowei","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"cover":"blog.png","title":"听风雨的博客","gitbook":"*","description":"记录生活和学习的点滴"},"file":{"path":"深度学习/实验二：文本情感分类.md","mtime":"2024-07-24T02:53:43.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-24T03:39:30.637Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax-pro/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

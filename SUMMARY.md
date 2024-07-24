@@ -1,8 +1,17 @@
 # Summary
 
 * [README](README.md)
-* [CSDN博客](csdn/README.md)
-    * [深度学习环境配置](csdn/2024-5-9-Configure_deep_learning_environment.md)
+* [深度学习](深度学习/README.md)
+    * [0.环境配置](深度学习/0.Configure_deep_learning_environment.md)
+    * [1.torch.tensor的初始化和基本操作](深度学习/1.torch.tensor的初始化和基本操作.md)
+    * [2.pytorch自动微分-autograd](深度学习/2.pytorch自动微分-autograd.md)
+    * [2.pytorch神经网络模块-nn](深度学习/2.梯度求导和反向传播（require_grad = True和False时tensor的区别）.md)
+    * [2.实验：手动实现线性回归](深度学习/2.实验：手动实现线性回归.md)
+    * [3.pytorch.nn神经网络的简易构建](深度学习/3.pytorch.nn神经网络的简易构建.md)
+    * [4.torch数据集类、加载、自带数据集、transform处理图像数据](深度学习/4.torch数据集类、加载、自带数据集、transform处理图像数据.md)
+    * [5.数据并行处理](深度学习/5.数据并行处理.md)
+    * [实验一：手写数字识别](深度学习/实验一：手写数字识别.md)
+    * [实验二：文本情感分类](深度学习/实验二：文本情感分类.md)
 * [比赛相关](比赛相关/README.md)
     * [标准单元电路的版图自动生成（第五届EDA精英挑战赛赛题八)](比赛相关/第五届EDA精英挑战赛赛题八-标准单元电路的版图自动生成.md)
 * [数值分析](数值分析/README.md)
@@ -12,5 +21,6 @@
     * [逼近论](数值分析/逼近论.md)
     * [手写笔记](数值分析/note.md)
 * [量子EDA](量子EDA/README.md)
-    * [量子计算设计自动化](量子EDA/Introducing Design Automation for Quantum Computing.md)
+    * [量子计算设计自动化综述](量子EDA/Introducing Design Automation for Quantum Computing.md)
+    * [量子傅里叶变换](量子EDA/Quantum Fourier Transform.md)
 
